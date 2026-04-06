@@ -1,0 +1,26 @@
+# Secretos y llaves (¡MUY IMPORTANTE!)
+.env
+.env.*
+
+# Entorno Virtual
+env/
+venv/
+ENV/
+etc/
+lib/
+lib64/
+bin/
+share/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+pyvenv.cfg
+
+# Configuración de editores
+.vscode/
