@@ -17,3 +17,6 @@ Dentro de la carpeta Assets se encuentran los cuatro modelos seleccionados, los 
 
 Adicional el script utilizado para hacer uso de los blendshapes es greetingAdultaFormal.cs que se encuentra
 dentro de la misma carpeta.
+
+- `docs/`: carpeta para los documentos del proyecto, donde se subirán todos los entregables.
+- `ProyectoLab/`: El codigo y los assets de los modelos para usar en Unity. 
