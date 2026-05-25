@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Procedimiento del Investigador - Agentes Virtuales para Adultos Mayores</title>
+    <style>
+        :root { --primary: #0F3B82; --primary-light: #2A5BAA; --bg-body: #F4F7F6; --bg-card: #FFFFFF; --text-main: #333333; --text-muted: #666666; --border-color: #E2E8F0; --radius: 8px; --shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; background-color: var(--bg-body); color: var(--text-main); line-height: 1.6; padding: 40px 20px; display: flex; justify-content: center; }
+        .container { max-width: 800px; width: 100%; }
+        .card { background: var(--bg-card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 40px; border: 1px solid var(--border-color); }
+        h1 { color: var(--primary); font-size: 1.8rem; margin-bottom: 8px; border-bottom: 2px solid var(--primary-light); padding-bottom: 10px; }
+        h2 { color: var(--primary-light); font-size: 1.3rem; margin-top: 30px; margin-bottom: 15px; }
+        h3 { color: var(--text-main); font-size: 1.1rem; margin-top: 20px; margin-bottom: 10px; }
+        p { margin-bottom: 15px; }
+        ul { margin-bottom: 15px; padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        .metadata-box { background-color: #F8FAFC; border-left: 4px solid var(--primary); padding: 15px; margin-bottom: 30px; border-radius: 0 var(--radius) var(--radius) 0; }
+        .metadata-box p { margin-bottom: 5px; font-size: 0.95rem; }
+        .metadata-box strong { color: var(--primary); }
+        .quote { background-color: #F1F5F9; font-style: italic; padding: 15px; border-radius: var(--radius); margin: 15px 0; color: #475569; }
+        .checkbox-list { list-style: none; padding-left: 0; }
+        .checkbox-list li { display: flex; align-items: flex-start; margin-bottom: 10px; }
+        .checkbox-list li::before { content: '☐'; font-size: 1.2rem; margin-right: 10px; color: var(--primary-light); line-height: 1.2; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Guía de Procedimiento del Investigador</h1>
+            <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 25px;">Protocolo de Evaluación de Agentes Virtuales para Adultos Mayores</p>
+
+            <div class="metadata-box">
+                <p><strong>Título:</strong> Agentes virtuales como medio de comunicación para ayudar a combatir la soledad en adultos mayores</p>
+                <p><strong>Investigadora Principal:</strong> Katharina Alfaro Solís, Bachiller en Ingeniería Eléctrica</p>
+                <p><strong>Unidad Ejecutora:</strong> Universidad de Costa Rica, Programa de Posgrado en Computación e Informática</p>
+            </div>
+
+            <h2>1. Resumen del Estudio y Preparación</h2>
+            <p>Esta guía detalla el protocolo para evaluar la interacción de los participantes con un agente virtual en una sesión única y controlada en laboratorio. El estudio compara dos variables (ej. Agente Tipo A vs. Agente Tipo B).</p>
+
+            <h3>1.1 Checklist de Materiales</h3>
+            <ul class="checkbox-list">
+                <li>Copias impresas del Formulario de Consentimiento Informado.</li>
+                <li>Computadora de laboratorio configurada y probada con la plataforma del agente.</li>
+                <li>Audífonos con micrófono funcional y desinfectados.</li>
+                <li>Tabla de asignación aleatoria (Grupo A / Grupo B).</li>
+                <li>Enlaces pre-cargados a los cuestionarios de evaluación.</li>
+                <li>Acceso a los cuestionarios en línea: UCLA Loneliness Scale, Agent Rating Questionnaire (ARQ), User Experience Questionnaire (UEQ).</li>
+                <li>Lista de participantes y registro de asistencia.</li>
+                <li>Traer el AMPO (o archivo físico) para guardar las hojas de consentimiento informado.</li>
+            </ul>
+
+            <h2>2. Inducción y Bienvenida</h2>
+
+            <h3>2.1 Consentimiento Informado</h3>
+            <p><strong>Saludo:</strong></p>
+            <div class="quote">"Hola _____, muchas gracias por venir. Mi nombre es _____. Yo seré el investigador encargado del estudio el día de hoy."</div>
+            <p><strong>Entrega del Consentimiento:</strong></p>
+            <div class="quote">"Vamos a leer juntos este consentimiento informado. Muy importante: usted es libre de retirar su consentimiento y dejar de participar en este estudio en cualquier momento sin ninguna consecuencia".</div>
+            <p><strong>Al terminar de leer (MUY IMPORTANTE DECIRLO TEXTUAL):</strong></p>
+            <div class="quote">“Después de leer el consentimiento, ¿todavía desea participar del estudio?”</div>
+            <p><strong>Si la respuesta es afirmativa:</strong> Solicitar el documento de identidad para verificar la mayoría de edad. Ambos firman dos copias del ejemplar. Entregue una copia al participante. Registre el ID del participante en su bitácora.</p>
+
+            <h3>2.2 Asignación al Grupo de Estudio</h3>
+            <p>De acuerdo con la tabla de asignación aleatoria, determine a qué grupo pertenece el participante y prepare silenciosamente la versión correspondiente del agente:</p>
+            <ul>
+                <li><strong>Grupo A:</strong> Agente virtual con la condición experimental A: la presencia del agente visual animado</li>
+                <li><strong>Grupo B:</strong> Agente virtual con la condición experimental B: la ausencia del componente visual</li>
+            </ul>
+
+            <h3>2.3 Cuestionarios Iniciales</h3>
+            <p>Solicite al participante completar el cuestionario inicial de perfil demográfico y experiencias previas con tecnología en la computadora o tablet del laboratorio.</p>
+
+            <p>Solicite al participante que complete en la computadora/tablet un cuestionario que incluya:</p>
+            <ul>
+                <li>Edad y sexo (sin nombre).</li>
+                <li>Nivel de educación.</li>
+                <li>Frecuencia de uso de tecnología (teléfono, computadora, asistentes virtuales).</li>
+                <li>Experiencias previas con agentes virtuales o chatbots.</li>
+            </ul>
+
+            <p>Aplique la UCLA Loneliness Scale (3 ítems o versión breve) ANTES de la interacción para medir el nivel inicial de soledad percibida del participante. Esto es crucial para comparación pre-post.</p>
+            
+            <h2>3. Fase de Interacción en Laboratorio</h2>
+
+            <h3>3.1 Asignación Aleatoria y Carga de la Condición Experimental</h3>
+            <p>Use la tabla de asignación aleatoria predeterminada o un generador de números aleatorios. Asigne silenciosamente al participante a una de las dos condiciones:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Condición</th>
+                        <th>Descripción Técnica</th>
+                        <th>Experiencia del Usuario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Grupo A (Condición Experimental)</strong></td>
+                        <td>Agente virtual con avatar animado (adulto mayor, movimientos suaves, expresiones faciales)</td>
+                        <td>El usuario ve y escucha al agente en una interfaz conversacional completa</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Grupo B (Condición Control)</strong></td>
+                        <td>Interfaz conversacional por voz solamente, sin componente visual</td>
+                        <td>El usuario solo escucha respuestas de voz, sin visualización de avatar</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>IMPORTANTE:</strong> No mencione la condición al participante. Use fraseología neutral.</p>
+            <div class="quote">"Ahora voy a cargar la plataforma del agente virtual. Esto puede tomar un momento. Mientras se carga, voy a pedirle que complete un cuestionario rápido."</div>
+
+            <p>Cargue silenciosamente la versión correspondiente según la asignación realizada. Verifique que:</p>
+            <ul>
+                <li>La plataforma está funcionando correctamente.</li>
+                <li>El micrófono captura audio limpio.</li>
+                <li>Los audífonos transmiten sonido claro.</li>
+                <li>Los logs de conversación se están registrando automáticamente bajo el ID del participante.</li>
+            </ul>
+
+            <h2>4. Fase de Interacción con el Agente Virtual</h2>
+
+            <h3>4.1 Instrucciones Neutrales y Objetivas</h3>
+            <p><strong>IMPORTANTE:</strong> Use estas instrucciones exactamente. No improvise ni agregue comentarios adicionales que puedan sesgar la experiencia.</p>
+
+            <div class="quote">
+                "A continuación, usted interactuará con una plataforma de conversación durante aproximadamente 10 minutos. Su tarea es conversar de manera natural con el sistema sobre temas que usted elija: puede hablar sobre sus intereses, experiencias, preocupaciones, o lo que desee. No hay respuestas correctas o incorrectas. Simplemente intente comunicarse como lo haría en una conversación normal. Yo saldré de su vista para darle privacidad completa durante la interacción. ¿Tiene alguna pregunta antes de comenzar?"
+            </div>
+
+            <p><strong>Aclaraciones permitidas (solo si pregunta):</strong></p>
+            <ul>
+                <li>"Puede hablar sobre lo que desee."</li>
+                <li>"No hay respuestas correctas o incorrectas."</li>
+                <li>"Actúe con naturalidad."</li>
+            </ul>
+
+            <p><strong>Aclaraciones PROHIBIDAS (para evitar sesgo):</strong></p>
+            <ul>
+                <li>No mencione características específicas del sistema (ej. "el agente es una persona adulta mayor").</li>
+                <li>No mencione que hay una comparación con otra versión.</li>
+                <li>No induzca temas específicos ("hable sobre la soledad", "cuente anécdotas personales").</li>
+                <li>No sugiera que el sistema es "inteligente", "realista" o cualquier adjetivo evaluativo.</li>
+            </ul>
+
+            <h3>4.2 Prueba de Audio y Equipos</h3>
+            <p>Antes de dejar solo al participante:</p>
+            <ul>
+                <li>Pruebe que el micrófono capta la voz correctamente.</li>
+                <li>Verifique el volumen de los audífonos (cómodo pero audible).</li>
+                <li>Confirme que el participante entiende cómo usar el micrófono y los audífonos.</li>
+            </ul>
+
+            <h3>4.3 Desarrollo de la Sesión de Interacción</h3>
+            <p>El investigador se retira completamente del espacio visual del participante (salir de la habitación). La sesión se desarrolla durante 10 minutos. El investigador monitorea remotamente que:</p>
+            <ul>
+                <li>El sistema está funcionando sin interrupciones.</li>
+                <li>Los logs de conversación se están registrando correctamente.</li>
+                <li>No hay problemas técnicos.</li>
+            </ul>
+
+            <h2>5. Fase Post-Interacción y Recolección de Datos</h2>
+
+            <h3>5.1 Transición Después de la Interacción</h3>
+            <p>Una vez transcurridos los 10 minutos, el investigador regresa al espacio del participante.</p>
+            <div class="quote">"¡Excelente! Ahora le voy a pedir que complete tres cuestionarios cortos sobre su experiencia. Estos cuestionarios toman aproximadamente 10 minutos en total. Responda según su percepción sincera."</div>
+
+            <h3>5.2 Cuestionarios Post-Interacción</h3>
+            <p>Administre los siguientes instrumentos validados en el orden indicado:</p>
+
+            <h4>5.2.1 UCLA Loneliness Scale (Versión Post)</h4>
+            <p><strong>Tiempo:</strong> 3-4 minutos</p>
+            <p><strong>Objetivo:</strong> Medir si la interacción con el agente afectó la percepción de soledad.</p>
+            <p><strong>Administración:</strong> Proporcione el cuestionario en línea. Asegúrese de que todas las respuestas estén vinculadas al ID del participante, no al nombre.</p>
+
+            <h4>5.2.2 Agent Rating Questionnaire (ARQ)</h4>
+            <p><strong>Tiempo:</strong> 3-4 minutos</p>
+            <p><strong>Objetivo:</strong> Evaluar la percepción del participante sobre las características, competencia y naturalidad del agente.</p>
+            <p><strong>Administración:</strong> El ARQ mide dimensiones como animacy, likeability, perceived intelligence, y emotional contagion. Proporcione el cuestionario en línea.</p>
+
+            <h4>5.2.3 User Experience Questionnaire (UEQ)</h4>
+            <p><strong>Tiempo:</strong> 3-4 minutos</p>
+            <p><strong>Objetivo:</strong> Evaluar la calidad general de la experiencia de usuario (atracción, claridad, eficiencia, dependencia, estimulación, novedad).</p>
+            <p><strong>Administración:</strong> Proporcione el cuestionario en línea. Subraye que no hay respuestas correctas y que buscamos su opinión sincera.</p>
+
+            <p><strong>Importante:</strong> Todos los cuestionarios deben ser completados, vinculados al ID del participante.</p>
+
+            <h3>5.3 Entrevista Cualitativa Breve</h3>
+            <p>Para profundizar en la percepción del usuario, realice una entrevista estructurada breve. Solicite permiso explícito para grabar el audio:</p>
+            <div class="quote">"Ahora voy a hacerle algunas preguntas sobre su experiencia. ¿Puedo grabar nuestro diálogo? La grabación se usará solo para transcribir sus respuestas y se almacenará de forma segura junto con los demás datos de investigación."</div>
+
+            <p><strong>Preguntas de la Entrevista (Estructura Semiestructurada):</strong></p>
+            <ul>
+                <li>"En términos generales, ¿cómo describiría su experiencia interactuando con la plataforma el día de hoy?"</li>
+                <li>"¿Hubo algún momento o característica que le haya gustado particularmente? ¿Por qué?"</li>
+                <li>"¿Hubo algo que le pareciera extraño, incómodo o frustrante? Por favor, describa."</li>
+                <li>"¿Notó algo particular en la forma en que la plataforma respondía o se comunicaba con usted?"</li>
+                <li>"¿Qué cambio o mejora le haría a este sistema?"</li>
+            </ul>
+
+            <p><strong>Notas para el investigador:</strong></p>
+            <ul>
+                <li>Deje espacios para que el participante elabore libremente.</li>
+                <li>NO sugiera respuestas ni interprete comentarios por él.</li>
+                <li>Registre tanto respuestas verbales como observaciones de lenguaje corporal o emociones manifiestas.</li>
+            </ul>
+
+            <h3>5.4 Despedida y Agradecimiento</h3>
+            <p>Detenga la grabación. Agradezca sinceramente la participación:</p>
+            <div class="quote">"Muchas gracias por dedicar su tiempo a participar en este estudio. Su aporte es absolutamente valioso para nuestra investigación. La información que usted proporciona nos ayudará a entender mejor cómo las tecnologías pueden mejorar la calidad de vida de las personas. ¡Le deseo un excelente día!"</div>
+
+            <h2>6. Gestión Final de Datos y Respaldo</h2>
+
+            <h3>6.1 Protocolo Inmediato Post-Sesión (En los 15 minutos después de que el participante abandone)</h3>
+            <ul>
+                <li><strong>Almacenamiento Seguro:</strong> Guarde el archivo de audio de la entrevista y verifique que los logs de conversación de la plataforma (si aplica) se hayan guardado correctamente bajo el ID del participante.</li>
+                <li><strong>Anonimización:</strong> Confirme que todos los datos y encuestas registradas estén vinculados únicamente al ID numérico y no al nombre legal del participante.</li>
+                <li><strong>Limpieza:</strong> Desinfecte el equipo (teclado, ratón, audífonos) y prepare el laboratorio para el siguiente participante de la lista.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
