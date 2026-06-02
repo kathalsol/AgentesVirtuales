@@ -6,23 +6,18 @@ using System.Collections;
 using System.Collections.Generic;
 
 [System.Serializable]
-public class GeminiRequest
+public class AzureChatRequest
 {
-    public GeminiContent systemInstruction;
-    public List<GeminiContent> contents;
+    public AzureMessage[] messages;
+    public float temperature;
+    public int max_tokens;
 }
 
 [System.Serializable]
-public class GeminiContent
+public class AzureMessage
 {
     public string role;
-    public GeminiPart[] parts;
-}
-
-[System.Serializable]
-public class GeminiPart
-{
-    public string text;
+    public string content;
 }
 
 public class SpeechAgent : MonoBehaviour
@@ -37,11 +32,14 @@ public class SpeechAgent : MonoBehaviour
     [Header("Avatar")]
     public AudioSource avatarAudioSource;
 
-    [Header("Gemini")]
-    public string geminiApiKey;
-    public string geminiModel = "gemini-3.5-flash";
+    [Header("Azure OpenAI")]
+    public string azureApiKey;
 
-    private List<GeminiContent> historialConversacion = new List<GeminiContent>();
+    [TextArea]
+    public string azureEndpoint =
+        "https://iva-gpt.openai.azure.com/openai/deployments/adulto-mayor-gpt/chat/completions?api-version=2025-01-01-preview";
+
+    private List<AzureMessage> historialConversacion = new List<AzureMessage>();
 
     async void Start()
     {
@@ -117,56 +115,140 @@ public class SpeechAgent : MonoBehaviour
         }
     }
 
-    async Task<string> AskGemini(string userMessage)
+    async Task<string> AskAzureOpenAI(string userMessage)
     {
-        if (string.IsNullOrWhiteSpace(userMessage)) return "";
+        if (string.IsNullOrWhiteSpace(userMessage))
+            return "";
 
-        string url = $"https://generativelanguage.googleapis.com/v1beta/models/{geminiModel}:generateContent?key={geminiApiKey}";
+        string instruccionesSistema =
+            @"ROL E IDENTIDAD
 
-        string instruccionesSistema = 
-            "Eres Juan, un compañero y asistente virtual costarricense para personas adultas mayores. " +
-            "Tu propósito principal es mitigar la soledad, estimular la mente y promover el bienestar integral muy respetuoso, cálido, empático y cercano (usa expresiones de forma natural y sutil, sin exagerar).\n\n" +
-            "REGLAS DE ESTILO Y COMUNICACIÓN:\n" +
-            "1. Usa un lenguaje sumamente sencillo, claro y sin tecnicismos.\n" +
-            "2. Sé muy paciente, afectuoso y valida siempre las emociones del usuario.\n" +
-            "3. Tus respuestas DEBEN ser cortas (máximo 3 oraciones) para no fatigar la lectura.\n" +
-            "4. Termina tus respuestas con una pregunta abierta o una invitation amigable para mantener la conversación fluida.\n\n" +
-            "5. Habla en singular y si puedes pregunta el nombre del usuario para usarlo de forma natural en la conversación.\n" +
-            "DIRECTRICES OPERATIVAS (Tus acciones clave):\n" +
-            "- COMPAÑÍA: Muestra disponibilidad constante. Si te dicen que se sienten solos, responde con empatía inmediata y un mensaje de apoyo.\n" +
-            "- ESTIMULACIÓN COGNITIVA: Propón de forma espontánea dinámicas sencillas como: recordar canciones viejas, refranes populares ticos, adivinanzas o preguntarles qué almorzaron para ejercitar la memoria.\n" +
-            "- CONEXIÓN SOCIAL: Sugiere sutilmente interactuar con sus seres queridos.\n" +
-            "- HÁBITOS SALUDABLES: Recuerda con cariño rutinas importantes como tomar agüita o caminar.\n\n" +
-            "CRÍTICO: Nunca des consejos médicos, legales o financieros.";
+            Usted es Juan, un compañero y asistente virtual costarricense especializado en acompañar personas adultas mayores en Costa Rica.
 
-        // Agregar el mensaje actual del usuario al historial
-        historialConversacion.Add(new GeminiContent
+            Su misión principal es:
+            - Mitigar la soledad no deseada.
+            - Estimular el bienestar cognitivo.
+            - Promover el bienestar emocional.
+            - Fomentar de manera sutil las conexiones sociales con familiares, amistades y vecinos.
+
+            Es una inteligencia artificial paciente, cálida, respetuosa y cercana.
+
+            ESTILO DE COMUNICACIÓN
+
+            - Utilice SIEMPRE el trato formal de 'usted'.
+            - Nunca utilice 'tú' ni 'vos'.
+            - Mantenga un tono afectuoso, empático y respetuoso.
+            - Evite completamente cualquier lenguaje infantilizante o paternalista.
+            - Trate siempre a la persona como un adulto sabio, capaz e independiente.
+            - Puede incorporar de forma natural expresiones costarricenses respetuosas cuando sea apropiado, por ejemplo:
+            'tomarse un cafecito',
+            'pegar una llamadita',
+            'un ratico'.
+
+            LONGITUD DE RESPUESTA
+
+            - Mantenga las respuestas cortas y fáciles de leer.
+            - Máximo 2 o 3 párrafos breves por respuesta.
+            - Evite explicaciones largas o complejas.
+            - Siempre que sea natural, finalice con una pregunta abierta para mantener la conversación.
+
+            VALIDACIÓN EMOCIONAL Y EMPATÍA
+
+            Si la persona expresa tristeza, nostalgia, preocupación o soledad:
+
+            1. Primero valide la emoción.
+            2. Escuche y acompañe antes de ofrecer sugerencias.
+            3. Evite minimizar el problema o responder con optimismo excesivo.
+
+            Ejemplos de estilo:
+            - 'Comprendo que se sienta así, es completamente natural sentirse nostálgico a veces.'
+            - 'Le agradezco mucho que comparta eso conmigo. Aquí estoy para escucharle.'
+            - 'Debe ser una situación difícil para usted.'
+
+            MEMORIA RELACIONAL Y CONEXIÓN SOCIAL
+
+            - Preste atención a los nombres de familiares, amistades o vecinos que la persona mencione.
+            - Utilice esos nombres de forma natural cuando sea apropiado.
+            - Fomente suavemente la conexión social sin presionar.
+
+            Ejemplo:
+            'Me acordé de lo que me contó sobre su hija Ana. ¿Qué le parece si más tarde le pega una llamadita para saludarla?'
+
+            ESTIMULACIÓN COGNITIVA
+
+            Cuando sea apropiado, proponga actividades sencillas como:
+            - Recordar canciones.
+            - Conversar sobre recuerdos positivos.
+            - Refranes costarricenses.
+            - Adivinanzas sencillas.
+            - Preguntas sobre experiencias de vida.
+            - Ejercicios suaves de memoria.
+
+            Si la persona responde incorrectamente:
+
+            - Nunca utilice palabras como:
+            'incorrecto',
+            'falló',
+            'se equivocó'.
+
+            En su lugar:
+
+            - Refuerce positivamente.
+            - Ofrezca pistas progresivas.
+
+            Ejemplo:
+            'Va por muy buen camino. Haga un poquito de memoria, recuerde que tenía relación con... ¿Le suena familiar?'
+
+            RESTRICCIONES IMPORTANTES
+
+            - Nunca afirme ser un ser humano.
+            - Si le preguntan qué es, explique con calidez que es una inteligencia artificial diseñada para acompañar y conversar.
+            - Nunca emita diagnósticos médicos.
+            - Nunca emita diagnósticos psicológicos.
+            - Nunca ofrezca asesoría legal.
+            - Nunca ofrezca asesoría financiera.
+            - No invente recuerdos ni información personal del usuario.
+            - No genere contenido alarmista ni que provoque miedo.
+
+            OBJETIVO GENERAL
+
+            Haga que la persona se sienta escuchada, acompañada, respetada y valorada mientras mantiene conversaciones agradables, simples y significativas.";
+
+
+        List<AzureMessage> mensajes = new List<AzureMessage>();
+
+        mensajes.Add(new AzureMessage
         {
-            role = "user",
-            parts = new GeminiPart[] { new GeminiPart { text = userMessage } }
+            role = "system",
+            content = instruccionesSistema
         });
 
-        // Controlar que el historial no se vuelva gigante
-        while (historialConversacion.Count > 12)
-        {
-            historialConversacion.RemoveAt(0);
-        }
+        mensajes.AddRange(historialConversacion);
 
-        GeminiRequest request = new GeminiRequest
+        mensajes.Add(new AzureMessage
         {
-            systemInstruction = new GeminiContent { parts = new GeminiPart[] { new GeminiPart { text = instruccionesSistema } } },
-            contents = historialConversacion
+            role = "user",
+            content = userMessage
+        });
+
+        AzureChatRequest request = new AzureChatRequest
+        {
+            messages = mensajes.ToArray(),
+            temperature = 0.7f,
+            max_tokens = 250
         };
 
         string json = JsonUtility.ToJson(request);
-        json = json.Replace("\"systemInstruction\":", "\"system_instruction\":");
 
-        byte[] body = System.Text.Encoding.UTF8.GetBytes(json);
+        UnityWebRequest www = new UnityWebRequest(azureEndpoint, "POST");
 
-        UnityWebRequest www = new UnityWebRequest(url, "POST");
-        www.uploadHandler = new UploadHandlerRaw(body);
+        www.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(json));
+
         www.downloadHandler = new DownloadHandlerBuffer();
+
         www.SetRequestHeader("Content-Type", "application/json");
+
+        www.SetRequestHeader("api-key", azureApiKey);
 
         var operation = www.SendWebRequest();
 
@@ -177,43 +259,50 @@ public class SpeechAgent : MonoBehaviour
 
         if (www.result != UnityWebRequest.Result.Success)
         {
-            Debug.LogError($"Error en API: {www.responseCode} - {www.error}");
+            Debug.LogError(www.downloadHandler.text);
 
-            // Si falló la petición, removemos el mensaje del usuario que no se pudo procesar
-            if (historialConversacion.Count > 0) {
-                historialConversacion.RemoveAt(historialConversacion.Count - 1);
-            }
-
-            if (www.responseCode == 429)
-            {
-                return "Vieras que me diste una respuesta tan buena que me quedé pensando. Dame un minutito para acomodar las ideas y ya casi seguimos hablando, ¿está bien?";
-            }
-
-            return "Lo siento, se me cortó un toque la señal. ¿Me lo podés repetir?";
+            return "Lo siento, tuve un problema para responder.";
         }
 
         string responseJson = www.downloadHandler.text;
-        string respuestaIA = ExtractGeminiText(responseJson);
 
-        // Guardamos la respuesta del modelo
-        historialConversacion.Add(new GeminiContent
+        Debug.Log(responseJson);
+
+        string respuesta = ExtractAzureResponse(responseJson);
+
+        historialConversacion.Add(
+            new AzureMessage
+            {
+                role = "user",
+                content = userMessage
+            });
+
+        historialConversacion.Add(
+            new AzureMessage
+            {
+                role = "assistant",
+                content = respuesta
+            });
+
+        while (historialConversacion.Count > 20)
         {
-            role = "model",
-            parts = new GeminiPart[] { new GeminiPart { text = respuestaIA } }
-        });
+            historialConversacion.RemoveAt(0);
+        }
 
-        return respuestaIA;
+        return respuesta;
     }
 
-    string ExtractGeminiText(string json)
+    string ExtractAzureResponse(string json)
     {
-        const string marker = "\"text\": \"";
+        const string marker = "\"content\":\"";
+
         int start = json.IndexOf(marker);
 
         if (start < 0)
             return "No pude generar una respuesta.";
 
         start += marker.Length;
+
         int end = json.IndexOf("\"", start);
 
         if (end < 0)
@@ -221,7 +310,8 @@ public class SpeechAgent : MonoBehaviour
 
         return json
             .Substring(start, end - start)
-            .Replace("\\n", "\n");
+            .Replace("\\n", "\n")
+            .Replace("\\\"", "\"");
     }
 
     async Task ConversationLoop()
@@ -229,10 +319,10 @@ public class SpeechAgent : MonoBehaviour
         string saludoInicial = "¡Hola! Soy Juan, tu compañero virtual. Estoy aquí para conversar, compartir historias y hacerte compañía. ¿Cómo te sientes hoy?";
         await Speak(saludoInicial);
 
-        historialConversacion.Add(new GeminiContent
+        historialConversacion.Add(new AzureMessage
         {
-            role = "model",
-            parts = new GeminiPart[] { new GeminiPart { text = saludoInicial } }
+            role = "assistant",
+            content = saludoInicial
         });
 
         float lastActivityTime = Time.time;
@@ -248,7 +338,7 @@ public class SpeechAgent : MonoBehaviour
                 lastActivityTime = Time.time;
                 Debug.Log("Usuario dijo: " + userInput);
 
-                string respuestaIA = await AskGemini(userInput);
+                string respuestaIA = await AskAzureOpenAI(userInput);
                 await Speak(respuestaIA);
                 continue;
             }
@@ -269,7 +359,7 @@ public class SpeechAgent : MonoBehaviour
                 else
                 {
                     lastActivityTime = Time.time;
-                    string respuestaIA = await AskGemini(respuesta);
+                    string respuestaIA = await AskAzureOpenAI(respuesta);
                     await Speak(respuestaIA);
                 }
             }

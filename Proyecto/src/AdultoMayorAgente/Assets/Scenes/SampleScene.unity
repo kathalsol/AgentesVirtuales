@@ -148,10 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcebc10efb51ec543a230cf7c9ef884d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  speechKey: 
+  speechKey:
   speechRegion: centralus
   avatarAudioSource: {fileID: 971046179}
-  geminiApiKey: 
+  geminiApiKey:
   geminiModel: gemini-2.5-flash
 --- !u!4 &291897749
 Transform:
