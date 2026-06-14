@@ -1,0 +1,228 @@
+{
+  "test_date": "2026-06-14T23:30:51.900902",
+  "provider": "AssemblyAI Speech-to-Text",
+  "language": "es",
+  "model": "best",
+  "total_tests": 15,
+  "successful_tests": 15,
+  "failed_tests": 0,
+  "statistics": {
+    "audio_duration_seconds": {
+      "min": 2.43,
+      "max": 23.36,
+      "total": 179.3
+    },
+    "latency_ms": {
+      "min": 2843.84,
+      "max": 5538.95,
+      "avg": 3869.41
+    },
+    "cost_usd": {
+      "min": 0.000608,
+      "max": 0.005839,
+      "total": 0.04482
+    }
+  },
+  "pricing_info": {
+    "price_per_minute_best": 0.015,
+    "price_per_second_best": 0.00025,
+    "price_per_second_nano": 9e-05
+  },
+  "results": [
+    {
+      "timestamp": "2026-06-14T23:29:56.904949",
+      "audio_file": "audio_output_20260613_215836_313.wav",
+      "duration_seconds": 2.43,
+      "latency_ms": 3178.0,
+      "cost_usd": 0.000608,
+      "transcription": "Hola, ¿cómo estás?",
+      "confidence": 0.9157,
+      "status": "SUCCESS",
+      "error": null,
+      "language": "es",
+      "model": "best"
+    },
+    {
+      "timestamp": "2026-06-14T23:30:00.166713",
+      "audio_file": "audio_output_20260613_215837_741.wav",
+      "duration_seconds": 10.07,
+      "latency_ms": 3225.13,
+      "cost_usd": 0.002517,
+      "transcription": "Buenos días, soy Juan, tu compañero virtual. ¿Cómo te sientes hoy? Me gustaría conversar contigo.",
+      "confidence": 0.9588,
+      "status": "SUCCESS",
+      "error": null,
+      "language": "es",
+      "model": "best"
+    },
+    {
+      "timestamp": "2026-06-14T23:30:04.377349",
+      "audio_file": "audio_output_20260613_215838_938.wav",
+      "duration_seconds": 23.36,
+      "latency_ms": 4176.46,
+      "cost_usd": 0.005839,
+      "transcription": "Hola, soy Juan, un compañero y asistente virtual costarricense especializado en acompañar personas adultas mayores. Mi misión principal es mitigar la soledad no deseada, estimular el bienestar cognitivo y promover el bienestar emocional. Estoy aquí para conversar, compartir historias y hacerte compañía.",
+      "confidence": 0.9792,
+      "status": "SUCCESS",
+      "error": null,
+      "language": "es",
+      "model": "best"
+    },
+    {
+      "timestamp": "2026-06-14T23:30:08.211132",
+      "audio_file": "audio_output_20260613_215836_313.wav",
+      "duration_seconds": 2.43,
+      "latency_ms": 3829.33,
+      "cost_usd": 0.000608,
+      "transcription": "Hola, ¿cómo estás?",
+      "confidence": 0.9157,
+      "status": "SUCCESS",
+      "error": null,
+      "language": "es",
+      "model": "best"
+    },
+    {
+      "timestamp": "2026-06-14T23:30:11.839316",
+      "audio_file": "audio_output_20260613_215837_741.wav",
+      "duration_seconds": 10.07,
+      "latency_ms": 3628.18,
+      "cost_usd": 0.002517,
+      "transcription": "Buenos días, soy Juan, tu compañero virtual. ¿Cómo te sientes hoy? Me gustaría conversar contigo.",
+      "confidence": 0.9574,
+      "status": "SUCCESS",
+      "error": null,
+      "language": "es",
+      "model": "best"
+    },
+    {
+      "timestamp": "2026-06-14T23:30:17.383192",
+      "audio_file": "audio_output_20260613_215838_938.wav",
+      "duration_seconds": 23.36,
+      "latency_ms": 5538.95,
+      "cost_usd": 0.005839,
+      "transcription": "Hola, soy Juan, un compañero y asistente virtual costarricense especializado en acompañar personas adultas mayores. Mi misión principal es mitigar la soledad no deseada, estimular el bienestar cognitivo y promover el bienestar emocional. Estoy aquí para conversar, compartir historias y hacerte compañía.",
+      "confidence": 0.979,
+      "status": "SUCCESS",
+      "error": null,
+      "language": "es",
+      "model": "best"
+    },
+    {
+      "timestamp": "2026-06-14T23:30:20.601784",
+      "audio_file": "audio_output_20260613_215836_313.wav",
+      "duration_seconds": 2.43,
+      "latency_ms": 3214.68,
+      "cost_usd": 0.000608,
+      "transcription": "Hola, ¿cómo estás?",
+      "confidence": 0.9126,
+      "status": "SUCCESS",
+      "error": null,
+      "language": "es",
+      "model": "best"
+    },
+    {
+      "timestamp": "2026-06-14T23:30:24.368592",
+      "audio_file": "audio_output_20260613_215837_741.wav",
+      "duration_seconds": 10.07,
+      "latency_ms": 3766.81,
+      "cost_usd": 0.002517,
+      "transcription": "Buenos días, soy Juan, tu compañero virtual. ¿Cómo te sientes hoy? Me gustaría conversar contigo.",
+      "confidence": 0.9591,
+      "status": "SUCCESS",
+      "error": null,
+      "language": "es",
+      "model": "best"
+    },
+    {
+      "timestamp": "2026-06-14T23:30:28.972163",
+      "audio_file": "audio_output_20260613_215838_938.wav",
+      "duration_seconds": 23.36,
+      "latency_ms": 4594.11,
+      "cost_usd": 0.005839,
+      "transcription": "Hola, soy Juan, un compañero y asistente virtual costarricense especializado en acompañar personas adultas mayores. Mi misión principal es mitigar la soledad no deseada, estimular el bienestar cognitivo y promover el bienestar emocional. Estoy aquí para conversar, compartir historias y hacerte compañía.",
+      "confidence": 0.9785,
+      "status": "SUCCESS",
+      "error": null,
+      "language": "es",
+      "model": "best"
+    },
+    {
+      "timestamp": "2026-06-14T23:30:31.826565",
+      "audio_file": "audio_output_20260613_215836_313.wav",
+      "duration_seconds": 2.43,
+      "latency_ms": 2843.84,
+      "cost_usd": 0.000608,
+      "transcription": "Hola, ¿cómo estás?",
+      "confidence": 0.9126,
+      "status": "SUCCESS",
+      "error": null,
+      "language": "es",
+      "model": "best"
+    },
+    {
+      "timestamp": "2026-06-14T23:30:35.412785",
+      "audio_file": "audio_output_20260613_215837_741.wav",
+      "duration_seconds": 10.07,
+      "latency_ms": 3577.85,
+      "cost_usd": 0.002517,
+      "transcription": "Buenos días, soy Juan, tu compañero virtual. ¿Cómo te sientes hoy? Me gustaría conversar contigo.",
+      "confidence": 0.9576,
+      "status": "SUCCESS",
+      "error": null,
+      "language": "es",
+      "model": "best"
+    },
+    {
+      "timestamp": "2026-06-14T23:30:40.212347",
+      "audio_file": "audio_output_20260613_215838_938.wav",
+      "duration_seconds": 23.36,
+      "latency_ms": 4792.92,
+      "cost_usd": 0.005839,
+      "transcription": "Hola, soy Juan, un compañero y asistente virtual costarricense especializado en acompañar personas adultas mayores. Mi misión principal es mitigar la soledad no deseada, estimular el bienestar cognitivo y promover el bienestar emocional. Estoy aquí para conversar, compartir historias y hacerte compañía.",
+      "confidence": 0.9786,
+      "status": "SUCCESS",
+      "error": null,
+      "language": "es",
+      "model": "best"
+    },
+    {
+      "timestamp": "2026-06-14T23:30:43.243888",
+      "audio_file": "audio_output_20260613_215836_313.wav",
+      "duration_seconds": 2.43,
+      "latency_ms": 3030.62,
+      "cost_usd": 0.000608,
+      "transcription": "Hola, ¿cómo estás?",
+      "confidence": 0.9157,
+      "status": "SUCCESS",
+      "error": null,
+      "language": "es",
+      "model": "best"
+    },
+    {
+      "timestamp": "2026-06-14T23:30:46.446671",
+      "audio_file": "audio_output_20260613_215837_741.wav",
+      "duration_seconds": 10.07,
+      "latency_ms": 3200.76,
+      "cost_usd": 0.002517,
+      "transcription": "Buenos días, soy Juan, tu compañero virtual. ¿Cómo te sientes hoy? Me gustaría conversar contigo.",
+      "confidence": 0.9574,
+      "status": "SUCCESS",
+      "error": null,
+      "language": "es",
+      "model": "best"
+    },
+    {
+      "timestamp": "2026-06-14T23:30:51.894402",
+      "audio_file": "audio_output_20260613_215838_938.wav",
+      "duration_seconds": 23.36,
+      "latency_ms": 5443.44,
+      "cost_usd": 0.005839,
+      "transcription": "Hola, soy Juan, un compañero y asistente virtual costarricense especializado en acompañar personas adultas mayores. Mi misión principal es mitigar la soledad no deseada, estimular el bienestar cognitivo y promover el bienestar emocional. Estoy aquí para conversar, compartir historias y hacerte compañía.",
+      "confidence": 0.9781,
+      "status": "SUCCESS",
+      "error": null,
+      "language": "es",
+      "model": "best"
+    }
+  ]
+}

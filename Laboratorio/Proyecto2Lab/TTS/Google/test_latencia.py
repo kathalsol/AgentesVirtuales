@@ -1,15 +1,20 @@
-from google.cloud import texttospeech
+import requests
 import time
 import os
 from datetime import datetime
 import json
+import base64
+import urllib3
 from dotenv import load_dotenv
+
+# Desactivar advertencias de SSL para entornos de prueba
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 load_dotenv()
 
 class GoogleTTSLatencyTester:
     """
-    Prueba la latencia y costo del TTS de Google Cloud
+    Prueba la latencia y costo del TTS de Google Cloud usando API Key
     Configuración: Neural2 voice es-US (Spanish - United States)
     """
     
@@ -18,25 +23,21 @@ class GoogleTTSLatencyTester:
     NEURAL2_PRICE_PER_MILLION_CHARS = 16.00
     NEURAL2_PREMIUM_PRICE_PER_MILLION_CHARS = 24.00
     
-    def __init__(self, credentials_path: str = None):
+    # URL de la API REST de Google Cloud TTS
+    TTS_API_URL = "https://texttospeech.googleapis.com/v1/text:synthesize"
+    
+    def __init__(self, api_key: str = None):
         """
         Inicializa el probador de TTS de Google
         
         Args:
-            credentials_path: Ruta al archivo JSON de credenciales de Google.
-                            Si no se proporciona, busca en GOOGLE_APPLICATION_CREDENTIALS
+            api_key: API key de Google Cloud (opcional, se lee de .env si no se provee)
         """
-        if credentials_path:
-            os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credentials_path
-        elif not os.getenv('GOOGLE_APPLICATION_CREDENTIALS'):
-            raise ValueError(
-                "No se encontró GOOGLE_APPLICATION_CREDENTIALS. "
-                "Proporciona el parámetro credentials_path o configura la variable de entorno."
-            )
-        
-        self.client = texttospeech.TextToSpeechClient()
+        self.api_key = api_key or os.getenv("GOOGLE_API_KEY")
+        if not self.api_key:
+            raise ValueError("Se requiere GOOGLE_API_KEY en el archivo .env")
         self.results = []
-        self.voice_name = "es-US-Neural2-A"  # Voz en español
+        self.voice_name = "es-US-Neural2-B"  # Voz masculina en español
         self.voice_type = "Neural2"
     
     def calculate_cost(self, text: str, voice_type: str = "Neural2") -> float:
@@ -72,40 +73,51 @@ class GoogleTTSLatencyTester:
             Diccionario con resultados de latencia y costo
         """
         try:
-            # Preparar solicitud
-            synthesis_input = texttospeech.SynthesisInput(text=text)
+            # Preparar solicitud para la REST API
+            request_body = {
+                "input": {"text": text},
+                "voice": {
+                    "languageCode": "es-US",
+                    "name": self.voice_name
+                },
+                "audioConfig": {
+                    "audioEncoding": "LINEAR16",
+                    "sampleRateHertz": 16000,
+                    "speakingRate": 1.0,
+                    "pitch": 0.0
+                }
+            }
             
-            voice = texttospeech.VoiceSelectionParams(
-                language_code="es-US",
-                name=self.voice_name
-            )
-            
-            audio_config = texttospeech.AudioConfig(
-                audio_encoding=texttospeech.AudioEncoding.LINEAR16,
-                sample_rate_hertz=16000,
-                speaking_rate=1.0,
-                pitch=0.0
-            )
+            # URL con API key
+            url = f"{self.TTS_API_URL}?key={self.api_key}"
             
             # Medir tiempo de síntesis
             start_time = time.time()
-            response = self.client.synthesize_speech(
-                input=synthesis_input,
-                voice=voice,
-                audio_config=audio_config
+            response = requests.post(
+                url,
+                json=request_body,
+                headers={"Content-Type": "application/json"},
+                verify=False  # Desactivar verificación SSL para entornos con proxy/firewall
             )
             end_time = time.time()
+            
+            # Verificar respuesta
+            if response.status_code != 200:
+                raise Exception(f"Error API: {response.status_code} - {response.text}")
+            
+            response_data = response.json()
+            audio_content = base64.b64decode(response_data["audioContent"])
             
             latency_ms = (end_time - start_time) * 1000
             cost = self.calculate_cost(text, self.voice_type)
             
             # Guardar audio si se solicita
             output_file = None
-            if save_audio and response.audio_content:
+            if save_audio and audio_content:
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")[:-3]
                 output_file = f"audio_output_{timestamp}.wav"
                 with open(output_file, 'wb') as out:
-                    out.write(response.audio_content)
+                    out.write(audio_content)
             
             result_dict = {
                 "timestamp": datetime.now().isoformat(),
@@ -138,9 +150,12 @@ class GoogleTTSLatencyTester:
             self.results.append(result_dict)
             return result_dict
     
-    def test_various_lengths(self) -> list:
+    def test_various_lengths(self, iterations: int = 5) -> list:
         """
         Prueba síntesis con textos de diferentes longitudes
+        
+        Args:
+            iterations: Número de iteraciones para cada texto (default: 5)
         
         Returns:
             Lista de resultados
@@ -157,11 +172,20 @@ class GoogleTTSLatencyTester:
         print("=" * 60)
         print("PRUEBAS DE LATENCIA - GOOGLE CLOUD TTS (Neural2)")
         print("=" * 60)
+        print(f"Iteraciones por texto: {iterations}")
+        print(f"Total de síntesis: {len(test_texts) * iterations}")
         
-        for i, text in enumerate(test_texts, 1):
-            print(f"\n[Prueba {i}] Sintetizando texto de {len(text)} caracteres...")
-            result = self.synthesize_text(text, save_audio=True)
-            self._print_result(result)
+        test_count = 0
+        for iteration in range(1, iterations + 1):
+            print(f"\n{'=' * 60}")
+            print(f"ITERACIÓN {iteration} de {iterations}")
+            print(f"{'=' * 60}")
+            
+            for i, text in enumerate(test_texts, 1):
+                test_count += 1
+                print(f"\n[Prueba {test_count}] Iteración {iteration}, Texto {i}/{len(test_texts)}: {len(text)} caracteres...")
+                result = self.synthesize_text(text, save_audio=True)
+                self._print_result(result)
         
         return self.results
     
@@ -265,25 +289,18 @@ class GoogleTTSLatencyTester:
 def main():
     """Función principal"""
     
-    # Obtener ruta de credenciales
-    credentials_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+    # Obtener API key
+    api_key = os.getenv("GOOGLE_API_KEY")
     
-    if not credentials_path:
-        print("Error: GOOGLE_APPLICATION_CREDENTIALS no está configurada")
+    if not api_key:
+        print("Error: GOOGLE_API_KEY no está configurada")
         print("\nConfigura en tu archivo .env:")
-        print('  GOOGLE_APPLICATION_CREDENTIALS="/ruta/al/archivo/credenciales.json"')
-        print("\nO configura la variable de entorno directamente:")
-        print('  set GOOGLE_APPLICATION_CREDENTIALS="C:\\ruta\\credenciales.json"')
-        return
-    
-    # Verificar que el archivo exista
-    if not os.path.exists(credentials_path):
-        print(f"Error: No se encontró el archivo de credenciales en: {credentials_path}")
+        print('  GOOGLE_API_KEY="tu-api-key-aqui"')
         return
     
     try:
         # Crear probador
-        tester = GoogleTTSLatencyTester(credentials_path)
+        tester = GoogleTTSLatencyTester(api_key)
         
         # Ejecutar pruebas
         tester.test_various_lengths()

@@ -1,0 +1,204 @@
+{
+  "test_date": "2026-06-15T09:19:53.238889",
+  "provider": "ElevenLabs",
+  "model_id": "eleven_multilingual_v2",
+  "voice_id": "ErXwobaYiN019PkySvjV",
+  "voice_name": "Antoni",
+  "total_tests": 15,
+  "successful_tests": 15,
+  "failed_tests": 0,
+  "statistics": {
+    "latency_ms": {
+      "min": 893.49,
+      "max": 4266.73,
+      "avg": 2103.84
+    },
+    "cost_usd": {
+      "min": 0.00396,
+      "max": 0.0671,
+      "total": 0.462
+    }
+  },
+  "results": [
+    {
+      "timestamp": "2026-06-15T09:19:22.647578",
+      "text": "Hola, ¿cómo estás?",
+      "text_length": 18,
+      "latency_ms": 1114.82,
+      "cost_usd": 0.00396,
+      "audio_file": "audio_output_20260615_091922_647.mp3",
+      "status": "SUCCESS",
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "voice_name": "Antoni",
+      "model_id": "eleven_multilingual_v2"
+    },
+    {
+      "timestamp": "2026-06-15T09:19:24.226991",
+      "text": "Buenos días. Soy Juan, tu compañero virtual. ¿Cómo te sientes hoy? Me gustaría conversar contigo.",
+      "text_length": 97,
+      "latency_ms": 1570.48,
+      "cost_usd": 0.02134,
+      "audio_file": "audio_output_20260615_091924_224.mp3",
+      "status": "SUCCESS",
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "voice_name": "Antoni",
+      "model_id": "eleven_multilingual_v2"
+    },
+    {
+      "timestamp": "2026-06-15T09:19:27.918390",
+      "text": "¡Hola! Soy Juan, un compañero y asistente virtual costarricense especializado en acompañar personas adultas mayores. Mi misión principal es mitigar la soledad no deseada, estimular el bienestar cognitivo y promover el bienestar emocional. Estoy aquí para conversar, compartir historias y hacerte compañía.",
+      "text_length": 305,
+      "latency_ms": 3685.04,
+      "cost_usd": 0.0671,
+      "audio_file": "audio_output_20260615_091927_915.mp3",
+      "status": "SUCCESS",
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "voice_name": "Antoni",
+      "model_id": "eleven_multilingual_v2"
+    },
+    {
+      "timestamp": "2026-06-15T09:19:28.826532",
+      "text": "Hola, ¿cómo estás?",
+      "text_length": 18,
+      "latency_ms": 893.49,
+      "cost_usd": 0.00396,
+      "audio_file": "audio_output_20260615_091928_826.mp3",
+      "status": "SUCCESS",
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "voice_name": "Antoni",
+      "model_id": "eleven_multilingual_v2"
+    },
+    {
+      "timestamp": "2026-06-15T09:19:30.304383",
+      "text": "Buenos días. Soy Juan, tu compañero virtual. ¿Cómo te sientes hoy? Me gustaría conversar contigo.",
+      "text_length": 97,
+      "latency_ms": 1475.11,
+      "cost_usd": 0.02134,
+      "audio_file": "audio_output_20260615_091930_304.mp3",
+      "status": "SUCCESS",
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "voice_name": "Antoni",
+      "model_id": "eleven_multilingual_v2"
+    },
+    {
+      "timestamp": "2026-06-15T09:19:33.969034",
+      "text": "¡Hola! Soy Juan, un compañero y asistente virtual costarricense especializado en acompañar personas adultas mayores. Mi misión principal es mitigar la soledad no deseada, estimular el bienestar cognitivo y promover el bienestar emocional. Estoy aquí para conversar, compartir historias y hacerte compañía.",
+      "text_length": 305,
+      "latency_ms": 3661.31,
+      "cost_usd": 0.0671,
+      "audio_file": "audio_output_20260615_091933_965.mp3",
+      "status": "SUCCESS",
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "voice_name": "Antoni",
+      "model_id": "eleven_multilingual_v2"
+    },
+    {
+      "timestamp": "2026-06-15T09:19:34.952528",
+      "text": "Hola, ¿cómo estás?",
+      "text_length": 18,
+      "latency_ms": 958.61,
+      "cost_usd": 0.00396,
+      "audio_file": "audio_output_20260615_091934_948.mp3",
+      "status": "SUCCESS",
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "voice_name": "Antoni",
+      "model_id": "eleven_multilingual_v2"
+    },
+    {
+      "timestamp": "2026-06-15T09:19:36.640846",
+      "text": "Buenos días. Soy Juan, tu compañero virtual. ¿Cómo te sientes hoy? Me gustaría conversar contigo.",
+      "text_length": 97,
+      "latency_ms": 1675.34,
+      "cost_usd": 0.02134,
+      "audio_file": "audio_output_20260615_091936_639.mp3",
+      "status": "SUCCESS",
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "voice_name": "Antoni",
+      "model_id": "eleven_multilingual_v2"
+    },
+    {
+      "timestamp": "2026-06-15T09:19:40.236703",
+      "text": "¡Hola! Soy Juan, un compañero y asistente virtual costarricense especializado en acompañar personas adultas mayores. Mi misión principal es mitigar la soledad no deseada, estimular el bienestar cognitivo y promover el bienestar emocional. Estoy aquí para conversar, compartir historias y hacerte compañía.",
+      "text_length": 305,
+      "latency_ms": 3575.95,
+      "cost_usd": 0.0671,
+      "audio_file": "audio_output_20260615_091940_222.mp3",
+      "status": "SUCCESS",
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "voice_name": "Antoni",
+      "model_id": "eleven_multilingual_v2"
+    },
+    {
+      "timestamp": "2026-06-15T09:19:41.188747",
+      "text": "Hola, ¿cómo estás?",
+      "text_length": 18,
+      "latency_ms": 939.03,
+      "cost_usd": 0.00396,
+      "audio_file": "audio_output_20260615_091941_188.mp3",
+      "status": "SUCCESS",
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "voice_name": "Antoni",
+      "model_id": "eleven_multilingual_v2"
+    },
+    {
+      "timestamp": "2026-06-15T09:19:42.790229",
+      "text": "Buenos días. Soy Juan, tu compañero virtual. ¿Cómo te sientes hoy? Me gustaría conversar contigo.",
+      "text_length": 97,
+      "latency_ms": 1599.54,
+      "cost_usd": 0.02134,
+      "audio_file": "audio_output_20260615_091942_788.mp3",
+      "status": "SUCCESS",
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "voice_name": "Antoni",
+      "model_id": "eleven_multilingual_v2"
+    },
+    {
+      "timestamp": "2026-06-15T09:19:46.563599",
+      "text": "¡Hola! Soy Juan, un compañero y asistente virtual costarricense especializado en acompañar personas adultas mayores. Mi misión principal es mitigar la soledad no deseada, estimular el bienestar cognitivo y promover el bienestar emocional. Estoy aquí para conversar, compartir historias y hacerte compañía.",
+      "text_length": 305,
+      "latency_ms": 3771.84,
+      "cost_usd": 0.0671,
+      "audio_file": "audio_output_20260615_091946_562.mp3",
+      "status": "SUCCESS",
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "voice_name": "Antoni",
+      "model_id": "eleven_multilingual_v2"
+    },
+    {
+      "timestamp": "2026-06-15T09:19:47.512329",
+      "text": "Hola, ¿cómo estás?",
+      "text_length": 18,
+      "latency_ms": 938.86,
+      "cost_usd": 0.00396,
+      "audio_file": "audio_output_20260615_091947_511.mp3",
+      "status": "SUCCESS",
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "voice_name": "Antoni",
+      "model_id": "eleven_multilingual_v2"
+    },
+    {
+      "timestamp": "2026-06-15T09:19:48.947122",
+      "text": "Buenos días. Soy Juan, tu compañero virtual. ¿Cómo te sientes hoy? Me gustaría conversar contigo.",
+      "text_length": 97,
+      "latency_ms": 1431.38,
+      "cost_usd": 0.02134,
+      "audio_file": "audio_output_20260615_091948_945.mp3",
+      "status": "SUCCESS",
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "voice_name": "Antoni",
+      "model_id": "eleven_multilingual_v2"
+    },
+    {
+      "timestamp": "2026-06-15T09:19:53.215409",
+      "text": "¡Hola! Soy Juan, un compañero y asistente virtual costarricense especializado en acompañar personas adultas mayores. Mi misión principal es mitigar la soledad no deseada, estimular el bienestar cognitivo y promover el bienestar emocional. Estoy aquí para conversar, compartir historias y hacerte compañía.",
+      "text_length": 305,
+      "latency_ms": 4266.73,
+      "cost_usd": 0.0671,
+      "audio_file": "audio_output_20260615_091953_215.mp3",
+      "status": "SUCCESS",
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "voice_name": "Antoni",
+      "model_id": "eleven_multilingual_v2"
+    }
+  ]
+}

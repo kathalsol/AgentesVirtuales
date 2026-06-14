@@ -50,7 +50,12 @@ def medir_latencia(modelo):
         print(f"Mensaje: {mensaje}\n")
 
         inicio = time.perf_counter()
-
+        ttft = None
+        respuesta_completa = ""
+        prompt_tokens = 0
+        completion_tokens = 0
+        total_tokens = 0
+        
         response = client.chat.completions.create(
             model=modelo,
             messages=[
@@ -62,31 +67,43 @@ def medir_latencia(modelo):
                     "role": "user",
                     "content": mensaje,
                 }
-            ]
+            ],
+            stream=True,
+            stream_options={"include_usage": True}  # Para obtener tokens al final
         )
 
+        for chunk in response:
+            # Capturar TTFT en el primer chunk con contenido
+            if ttft is None and chunk.choices and chunk.choices[0].delta.content:
+                ttft = time.perf_counter() - inicio
+            
+            # Acumular texto de respuesta
+            if chunk.choices and chunk.choices[0].delta.content:
+                respuesta_completa += chunk.choices[0].delta.content
+            
+            # El último chunk trae el usage (gracias a stream_options)
+            if hasattr(chunk, "usage") and chunk.usage is not None:
+                prompt_tokens = chunk.usage.prompt_tokens
+                completion_tokens = chunk.usage.completion_tokens
+                total_tokens = chunk.usage.total_tokens
+        
         fin = time.perf_counter()
-
-        latencia = fin - inicio
-
-        prompt_tokens = response.usage.prompt_tokens
-        completion_tokens = response.usage.completion_tokens
-        total_tokens = response.usage.total_tokens
+        latencia_total = fin - inicio
 
         print(
             f"Respuesta de Juan:\n"
-            f"{response.choices[0].message.content}\n"
+            f"{respuesta_completa}\n"
         )
 
         print("-" * 60)
-
-        print(f"Latencia total: {latencia:.2f} segundos")
-
-        print("\nUso de tokens:")
-        print(f"  - Input tokens: {prompt_tokens}")
+        print(f"TTFT (tiempo al primer token): {ttft:.2f} segundos" if ttft else "TTFT: No disponible")
+        print(f"Latencia total:                {latencia_total:.2f} segundos")
+        if ttft:
+            print(f"Latencia de generación:        {(latencia_total - ttft):.2f} segundos")
+        print(f"\nUso de tokens:")
+        print(f"  - Input tokens:  {prompt_tokens}")
         print(f"  - Output tokens: {completion_tokens}")
-        print(f"  - Total tokens: {total_tokens}")
-
+        print(f"  - Total tokens:  {total_tokens}")
         print("\nCosto:")
         print("  - Costo total: $0.000000 (modelo local)")
 
@@ -112,8 +129,11 @@ def main():
 
     modelos = [m.strip() for m in args.modelo.split(",")]
 
-    for modelo in modelos:
-        medir_latencia(modelo)
+    # Realizar 5 iteraciones por modelo para obtener un promedio
+    for iteracion in range(5):
+        print(f"\n=== Iteración {iteracion + 1} ===")
+        for modelo in modelos:
+            medir_latencia(modelo)
 
 
 if __name__ == "__main__":

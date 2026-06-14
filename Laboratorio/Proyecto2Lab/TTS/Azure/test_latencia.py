@@ -99,9 +99,12 @@ class AzureTTSLatencyTester:
         self.results.append(result_dict)
         return result_dict
     
-    def test_various_lengths(self) -> list:
+    def test_various_lengths(self, iterations: int = 5) -> list:
         """
         Prueba síntesis con textos de diferentes longitudes
+        
+        Args:
+            iterations: Número de iteraciones para cada texto (default: 5)
         
         Returns:
             Lista de resultados
@@ -118,11 +121,20 @@ class AzureTTSLatencyTester:
         print("=" * 60)
         print("PRUEBAS DE LATENCIA - AZURE TTS (es-CR-JuanNeural)")
         print("=" * 60)
+        print(f"Iteraciones por texto: {iterations}")
+        print(f"Total de síntesis: {len(test_texts) * iterations}")
         
-        for i, text in enumerate(test_texts, 1):
-            print(f"\n[Prueba {i}] Sintetizando texto de {len(text)} caracteres...")
-            result = self.synthesize_text(text, save_audio=True)
-            self._print_result(result)
+        test_count = 0
+        for iteration in range(1, iterations + 1):
+            print(f"\n{'=' * 60}")
+            print(f"ITERACIÓN {iteration} de {iterations}")
+            print(f"{'=' * 60}")
+            
+            for i, text in enumerate(test_texts, 1):
+                test_count += 1
+                print(f"\n[Prueba {test_count}] Iteración {iteration}, Texto {i}/{len(test_texts)}: {len(text)} caracteres...")
+                result = self.synthesize_text(text, save_audio=True)
+                self._print_result(result)
         
         return self.results
     

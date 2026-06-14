@@ -1,0 +1,56 @@
+{
+  "test_date": "2026-06-14T11:21:57.000528",
+  "provider": "Google Cloud",
+  "voice_type": "Neural2",
+  "voice_name": "es-US-Neural2-B",
+  "total_tests": 3,
+  "successful_tests": 3,
+  "failed_tests": 0,
+  "statistics": {
+    "latency_ms": {
+      "min": 1001.56,
+      "max": 2105.74,
+      "avg": 1413.6
+    },
+    "cost_usd": {
+      "min": 0.000288,
+      "max": 0.00488,
+      "total": 0.00672
+    }
+  },
+  "results": [
+    {
+      "timestamp": "2026-06-14T11:21:53.747480",
+      "text": "Hola, ¿cómo estás?",
+      "text_length": 18,
+      "latency_ms": 1001.56,
+      "cost_usd": 0.000288,
+      "audio_file": "audio_output_20260614_112153_745.wav",
+      "status": "SUCCESS",
+      "voice_name": "es-US-Neural2-B",
+      "voice_type": "Neural2"
+    },
+    {
+      "timestamp": "2026-06-14T11:21:54.886290",
+      "text": "Buenos días. Soy Juan, tu compañero virtual. ¿Cómo te sientes hoy? Me gustaría conversar contigo.",
+      "text_length": 97,
+      "latency_ms": 1133.51,
+      "cost_usd": 0.001552,
+      "audio_file": "audio_output_20260614_112154_882.wav",
+      "status": "SUCCESS",
+      "voice_name": "es-US-Neural2-B",
+      "voice_type": "Neural2"
+    },
+    {
+      "timestamp": "2026-06-14T11:21:56.996043",
+      "text": "¡Hola! Soy Juan, un compañero y asistente virtual costarricense especializado en acompañar personas adultas mayores. Mi misión principal es mitigar la soledad no deseada, estimular el bienestar cognitivo y promover el bienestar emocional. Estoy aquí para conversar, compartir historias y hacerte compañía.",
+      "text_length": 305,
+      "latency_ms": 2105.74,
+      "cost_usd": 0.00488,
+      "audio_file": "audio_output_20260614_112156_992.wav",
+      "status": "SUCCESS",
+      "voice_name": "es-US-Neural2-B",
+      "voice_type": "Neural2"
+    }
+  ]
+}

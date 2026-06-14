@@ -1,0 +1,67 @@
+{
+  "test_date": "2026-06-14T14:45:39.946839",
+  "provider": "Whisper (Local)",
+  "model": "base",
+  "language": "es",
+  "is_local": true,
+  "total_tests": 3,
+  "successful_tests": 3,
+  "failed_tests": 0,
+  "statistics": {
+    "audio_duration_seconds": {
+      "min": 2.43,
+      "max": 23.36,
+      "total": 35.86
+    },
+    "latency_ms": {
+      "min": 4000.89,
+      "max": 8738.14,
+      "avg": 6702.16
+    },
+    "cost_usd": {
+      "total": 0.0,
+      "note": "Whisper es gratuito (ejecución local)"
+    }
+  },
+  "results": [
+    {
+      "timestamp": "2026-06-14T14:45:28.555532",
+      "audio_file": "audio_output_20260613_215836_313.wav",
+      "duration_seconds": 2.43,
+      "latency_ms": 8738.14,
+      "cost_usd": 0.0,
+      "transcription": "Hola, ¿cómo estás?",
+      "detected_language": "es",
+      "status": "SUCCESS",
+      "error": null,
+      "model": "base",
+      "is_local": true
+    },
+    {
+      "timestamp": "2026-06-14T14:45:32.568757",
+      "audio_file": "audio_output_20260613_215837_741.wav",
+      "duration_seconds": 10.07,
+      "latency_ms": 4000.89,
+      "cost_usd": 0.0,
+      "transcription": "Buenos días. Soy Juan, tu compañero virtual. ¿Cómo te sientes hoy? Me gustaría conversar contigo.",
+      "detected_language": "es",
+      "status": "SUCCESS",
+      "error": null,
+      "model": "base",
+      "is_local": true
+    },
+    {
+      "timestamp": "2026-06-14T14:45:39.940368",
+      "audio_file": "audio_output_20260613_215838_938.wav",
+      "duration_seconds": 23.36,
+      "latency_ms": 7367.46,
+      "cost_usd": 0.0,
+      "transcription": "Hola. Soy Juan, un compañero y asistente virtual costarricense especializado en acompañar personas adultas mayores. Mi misión principal es mitigar la soledad no deseada, estimular el bienestar cognitivo y promover el bienestar emocional. Estoy aquí para conversar, compartir historias y hacerte compañía.",
+      "detected_language": "es",
+      "status": "SUCCESS",
+      "error": null,
+      "model": "base",
+      "is_local": true
+    }
+  ]
+}

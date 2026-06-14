@@ -1,0 +1,204 @@
+{
+  "test_date": "2026-06-15T09:19:12.390835",
+  "provider": "Cartesia",
+  "model_id": "sonic-2",
+  "voice_id": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
+  "voice_name": "Spanish Voice",
+  "total_tests": 15,
+  "successful_tests": 15,
+  "failed_tests": 0,
+  "statistics": {
+    "latency_ms": {
+      "min": 608.24,
+      "max": 13064.46,
+      "avg": 3821.34
+    },
+    "cost_usd": {
+      "min": 0.0009,
+      "max": 0.01525,
+      "total": 0.105
+    }
+  },
+  "results": [
+    {
+      "timestamp": "2026-06-15T09:18:16.215581",
+      "text": "Hola, ¿cómo estás?",
+      "text_length": 18,
+      "latency_ms": 1337.83,
+      "cost_usd": 0.0009,
+      "audio_file": "audio_output_20260615_091816_214.wav",
+      "status": "SUCCESS",
+      "voice_id": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
+      "voice_name": "Spanish Voice",
+      "model_id": "sonic-2"
+    },
+    {
+      "timestamp": "2026-06-15T09:18:19.341051",
+      "text": "Buenos días. Soy Juan, tu compañero virtual. ¿Cómo te sientes hoy? Me gustaría conversar contigo.",
+      "text_length": 97,
+      "latency_ms": 3119.21,
+      "cost_usd": 0.00485,
+      "audio_file": "audio_output_20260615_091819_341.wav",
+      "status": "SUCCESS",
+      "voice_id": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
+      "voice_name": "Spanish Voice",
+      "model_id": "sonic-2"
+    },
+    {
+      "timestamp": "2026-06-15T09:18:32.416364",
+      "text": "¡Hola! Soy Juan, un compañero y asistente virtual costarricense especializado en acompañar personas adultas mayores. Mi misión principal es mitigar la soledad no deseada, estimular el bienestar cognitivo y promover el bienestar emocional. Estoy aquí para conversar, compartir historias y hacerte compañía.",
+      "text_length": 305,
+      "latency_ms": 13064.46,
+      "cost_usd": 0.01525,
+      "audio_file": "audio_output_20260615_091832_415.wav",
+      "status": "SUCCESS",
+      "voice_id": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
+      "voice_name": "Spanish Voice",
+      "model_id": "sonic-2"
+    },
+    {
+      "timestamp": "2026-06-15T09:18:33.046747",
+      "text": "Hola, ¿cómo estás?",
+      "text_length": 18,
+      "latency_ms": 608.24,
+      "cost_usd": 0.0009,
+      "audio_file": "audio_output_20260615_091833_046.wav",
+      "status": "SUCCESS",
+      "voice_id": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
+      "voice_name": "Spanish Voice",
+      "model_id": "sonic-2"
+    },
+    {
+      "timestamp": "2026-06-15T09:18:35.172056",
+      "text": "Buenos días. Soy Juan, tu compañero virtual. ¿Cómo te sientes hoy? Me gustaría conversar contigo.",
+      "text_length": 97,
+      "latency_ms": 2114.83,
+      "cost_usd": 0.00485,
+      "audio_file": "audio_output_20260615_091835_172.wav",
+      "status": "SUCCESS",
+      "voice_id": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
+      "voice_name": "Spanish Voice",
+      "model_id": "sonic-2"
+    },
+    {
+      "timestamp": "2026-06-15T09:18:40.038814",
+      "text": "¡Hola! Soy Juan, un compañero y asistente virtual costarricense especializado en acompañar personas adultas mayores. Mi misión principal es mitigar la soledad no deseada, estimular el bienestar cognitivo y promover el bienestar emocional. Estoy aquí para conversar, compartir historias y hacerte compañía.",
+      "text_length": 305,
+      "latency_ms": 4857.04,
+      "cost_usd": 0.01525,
+      "audio_file": "audio_output_20260615_091840_038.wav",
+      "status": "SUCCESS",
+      "voice_id": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
+      "voice_name": "Spanish Voice",
+      "model_id": "sonic-2"
+    },
+    {
+      "timestamp": "2026-06-15T09:18:41.040204",
+      "text": "Hola, ¿cómo estás?",
+      "text_length": 18,
+      "latency_ms": 991.28,
+      "cost_usd": 0.0009,
+      "audio_file": "audio_output_20260615_091841_040.wav",
+      "status": "SUCCESS",
+      "voice_id": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
+      "voice_name": "Spanish Voice",
+      "model_id": "sonic-2"
+    },
+    {
+      "timestamp": "2026-06-15T09:18:45.930928",
+      "text": "Buenos días. Soy Juan, tu compañero virtual. ¿Cómo te sientes hoy? Me gustaría conversar contigo.",
+      "text_length": 97,
+      "latency_ms": 4878.09,
+      "cost_usd": 0.00485,
+      "audio_file": "audio_output_20260615_091845_926.wav",
+      "status": "SUCCESS",
+      "voice_id": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
+      "voice_name": "Spanish Voice",
+      "model_id": "sonic-2"
+    },
+    {
+      "timestamp": "2026-06-15T09:18:52.263337",
+      "text": "¡Hola! Soy Juan, un compañero y asistente virtual costarricense especializado en acompañar personas adultas mayores. Mi misión principal es mitigar la soledad no deseada, estimular el bienestar cognitivo y promover el bienestar emocional. Estoy aquí para conversar, compartir historias y hacerte compañía.",
+      "text_length": 305,
+      "latency_ms": 6308.06,
+      "cost_usd": 0.01525,
+      "audio_file": "audio_output_20260615_091852_247.wav",
+      "status": "SUCCESS",
+      "voice_id": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
+      "voice_name": "Spanish Voice",
+      "model_id": "sonic-2"
+    },
+    {
+      "timestamp": "2026-06-15T09:18:53.599788",
+      "text": "Hola, ¿cómo estás?",
+      "text_length": 18,
+      "latency_ms": 1332.37,
+      "cost_usd": 0.0009,
+      "audio_file": "audio_output_20260615_091853_597.wav",
+      "status": "SUCCESS",
+      "voice_id": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
+      "voice_name": "Spanish Voice",
+      "model_id": "sonic-2"
+    },
+    {
+      "timestamp": "2026-06-15T09:18:56.921365",
+      "text": "Buenos días. Soy Juan, tu compañero virtual. ¿Cómo te sientes hoy? Me gustaría conversar contigo.",
+      "text_length": 97,
+      "latency_ms": 3311.12,
+      "cost_usd": 0.00485,
+      "audio_file": "audio_output_20260615_091856_918.wav",
+      "status": "SUCCESS",
+      "voice_id": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
+      "voice_name": "Spanish Voice",
+      "model_id": "sonic-2"
+    },
+    {
+      "timestamp": "2026-06-15T09:19:02.473259",
+      "text": "¡Hola! Soy Juan, un compañero y asistente virtual costarricense especializado en acompañar personas adultas mayores. Mi misión principal es mitigar la soledad no deseada, estimular el bienestar cognitivo y promover el bienestar emocional. Estoy aquí para conversar, compartir historias y hacerte compañía.",
+      "text_length": 305,
+      "latency_ms": 5535.98,
+      "cost_usd": 0.01525,
+      "audio_file": "audio_output_20260615_091902_468.wav",
+      "status": "SUCCESS",
+      "voice_id": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
+      "voice_name": "Spanish Voice",
+      "model_id": "sonic-2"
+    },
+    {
+      "timestamp": "2026-06-15T09:19:03.310068",
+      "text": "Hola, ¿cómo estás?",
+      "text_length": 18,
+      "latency_ms": 825.03,
+      "cost_usd": 0.0009,
+      "audio_file": "audio_output_20260615_091903_307.wav",
+      "status": "SUCCESS",
+      "voice_id": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
+      "voice_name": "Spanish Voice",
+      "model_id": "sonic-2"
+    },
+    {
+      "timestamp": "2026-06-15T09:19:06.021237",
+      "text": "Buenos días. Soy Juan, tu compañero virtual. ¿Cómo te sientes hoy? Me gustaría conversar contigo.",
+      "text_length": 97,
+      "latency_ms": 2689.22,
+      "cost_usd": 0.00485,
+      "audio_file": "audio_output_20260615_091906_015.wav",
+      "status": "SUCCESS",
+      "voice_id": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
+      "voice_name": "Spanish Voice",
+      "model_id": "sonic-2"
+    },
+    {
+      "timestamp": "2026-06-15T09:19:12.375551",
+      "text": "¡Hola! Soy Juan, un compañero y asistente virtual costarricense especializado en acompañar personas adultas mayores. Mi misión principal es mitigar la soledad no deseada, estimular el bienestar cognitivo y promover el bienestar emocional. Estoy aquí para conversar, compartir historias y hacerte compañía.",
+      "text_length": 305,
+      "latency_ms": 6347.28,
+      "cost_usd": 0.01525,
+      "audio_file": "audio_output_20260615_091912_373.wav",
+      "status": "SUCCESS",
+      "voice_id": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
+      "voice_name": "Spanish Voice",
+      "model_id": "sonic-2"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "test_date": "2026-06-14T12:34:31.284693",
+  "provider": "Piper (Local)",
+  "model_name": "es_ES-davefx-medium",
+  "is_local": true,
+  "total_tests": 3,
+  "successful_tests": 3,
+  "failed_tests": 0,
+  "statistics": {
+    "latency_ms": {
+      "min": 265.38,
+      "max": 726.33,
+      "avg": 430.68
+    },
+    "cost_usd": {
+      "total": 0.0,
+      "note": "Piper es gratuito (ejecución local)"
+    }
+  },
+  "results": [
+    {
+      "timestamp": "2026-06-14T12:34:28.992678",
+      "text": "Hola, ¿cómo estás?",
+      "text_length": 18,
+      "latency_ms": 300.32,
+      "cost_usd": 0.0,
+      "audio_file": "audio_output_20260614_123428_092.mp3",
+      "status": "SUCCESS",
+      "model_name": "es_ES-davefx-medium",
+      "is_local": true
+    },
+    {
+      "timestamp": "2026-06-14T12:34:29.878553",
+      "text": "Buenos días. Soy Juan, tu compañero virtual. ¿Cómo te sientes hoy? Me gustaría conversar contigo.",
+      "text_length": 97,
+      "latency_ms": 265.38,
+      "cost_usd": 0.0,
+      "audio_file": "audio_output_20260614_123428_993.mp3",
+      "status": "SUCCESS",
+      "model_name": "es_ES-davefx-medium",
+      "is_local": true
+    },
+    {
+      "timestamp": "2026-06-14T12:34:31.283116",
+      "text": "¡Hola! Soy Juan, un compañero y asistente virtual costarricense especializado en acompañar personas adultas mayores. Mi misión principal es mitigar la soledad no deseada, estimular el bienestar cognitivo y promover el bienestar emocional. Estoy aquí para conversar, compartir historias y hacerte compañía.",
+      "text_length": 305,
+      "latency_ms": 726.33,
+      "cost_usd": 0.0,
+      "audio_file": "audio_output_20260614_123429_879.mp3",
+      "status": "SUCCESS",
+      "model_name": "es_ES-davefx-medium",
+      "is_local": true
+    }
+  ]
+}
