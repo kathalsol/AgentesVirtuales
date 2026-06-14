@@ -1,0 +1,50 @@
+{
+  "test_date": "2026-06-13T21:58:40.185674",
+  "total_tests": 3,
+  "successful_tests": 3,
+  "failed_tests": 0,
+  "statistics": {
+    "latency_ms": {
+      "min": 1071.41,
+      "max": 1281.45,
+      "avg": 1159.52
+    },
+    "cost_usd": {
+      "min": 0.000432,
+      "max": 0.00732,
+      "total": 0.01008
+    }
+  },
+  "results": [
+    {
+      "timestamp": "2026-06-13T21:58:37.598809",
+      "text": "Hola, ¿cómo estás?",
+      "text_length": 18,
+      "latency_ms": 1281.45,
+      "cost_usd": 0.000432,
+      "audio_file": "audio_output_20260613_215836_313.wav",
+      "status": "SUCCESS",
+      "reason": "ResultReason.SynthesizingAudioCompleted"
+    },
+    {
+      "timestamp": "2026-06-13T21:58:38.814562",
+      "text": "Buenos días. Soy Juan, tu compañero virtual. ¿Cómo te sientes hoy? Me gustaría conversar contigo.",
+      "text_length": 97,
+      "latency_ms": 1071.41,
+      "cost_usd": 0.002328,
+      "audio_file": "audio_output_20260613_215837_741.wav",
+      "status": "SUCCESS",
+      "reason": "ResultReason.SynthesizingAudioCompleted"
+    },
+    {
+      "timestamp": "2026-06-13T21:58:40.065111",
+      "text": "¡Hola! Soy Juan, un compañero y asistente virtual costarricense especializado en acompañar personas adultas mayores. Mi misión principal es mitigar la soledad no deseada, estimular el bienestar cognitivo y promover el bienestar emocional. Estoy aquí para conversar, compartir historias y hacerte compañía.",
+      "text_length": 305,
+      "latency_ms": 1125.69,
+      "cost_usd": 0.00732,
+      "audio_file": "audio_output_20260613_215838_938.wav",
+      "status": "SUCCESS",
+      "reason": "ResultReason.SynthesizingAudioCompleted"
+    }
+  ]
+}
