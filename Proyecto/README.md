@@ -58,6 +58,41 @@ https://youtu.be/4BFylup-Vu8
 6. **Detener la Ejecución**
    - Hacer clic en el botón **Stop** (◼) o presionar `Ctrl + P` para detener la ejecución
 
+### Configuración del Speech Agent
+
+Antes de ejecutar el PoC, es necesario configurar las credenciales de los servicios de Azure en el script `SpeechAgent` de Unity.
+
+#### Acceder al Script SpeechAgent en Unity
+
+1. En la ventana **Hierarchy** de Unity, localizar el GameObject que contiene el componente **SpeechAgent Script**
+2. Seleccionar el GameObject (generalmente se llama `SpeechAgent` o similar)
+3. En la ventana **Inspector** (lado derecho), ubicar el componente **Speech Agent (Script)**
+4. Verá los siguientes campos que requieren configuración:
+
+#### Configurar Credenciales de Azure
+
+El componente **Speech Agent** requiere las credenciales de tres servicios de Azure:
+
+**1. Azure Speech Services**
+   - `Speech Key`: La clave de API de Azure Speech Services
+   - `Speech Region`: La región donde se desplegó el servicio (ej. `centralus`, `eastus`, `westeurope`)
+   - *Obtener credenciales*: Ir a [Azure Portal](https://portal.azure.com/) → Buscar "Speech Services" → Crear o seleccionar un recurso existente → Copiar la clave y región desde la pestaña "Keys and Endpoint"
+
+**2. Azure OpenAI**
+   - `Azure Api Key`: La clave de API de Azure OpenAI
+   - *Obtener credenciales*: Ir a [Azure Portal](https://portal.azure.com/) → Buscar "Azure OpenAI" → Seleccionar el recurso → Copiar la clave desde la pestaña "Keys and Endpoint"
+
+**3. Azure OpenAI Endpoint**
+   - `Azure Endpoint`: La URL del endpoint de Azure OpenAI (ej. `https://iva-gpt.openai.azure.com/openai/deployments/adulto-mayor-gpt/chat/completions?api-version=2025-01-01-preview`)
+   - *Obtener endpoint*: En Azure Portal → Azure OpenAI → Pestaña "Keys and Endpoint" → Copiar el endpoint
+
+**Pasos para configurar:**
+1. En el Inspector de Unity, en el componente **Speech Agent (Script)**, pegue cada credencial en su respectivo campo
+2. Asegúrese de que:
+   - El **Avatar Audio Source** esté asignado (debe apuntar a un AudioSource en la escena)
+   - El **Conversation Text** esté asignado (debe apuntar a un componente de texto UI para mostrar la conversación)
+3. Una vez configuradas todas las credenciales, el agente estará listo para funcionar
+
 ### Solución de Problemas
 
 | Problema | Solución |

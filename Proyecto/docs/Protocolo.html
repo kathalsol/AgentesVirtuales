@@ -38,18 +38,38 @@
             </div>
 
             <h2>1. Resumen del Estudio y Preparación</h2>
-            <p>Esta guía detalla el protocolo para evaluar la interacción de los participantes con un agente virtual en una sesión única y controlada en laboratorio. El estudio compara dos variables (ej. Agente Tipo A vs. Agente Tipo B).</p>
+            <p><strong>El presente estudio corresponde a una investigación cualitativa exploratoria de casos múltiples, orientada a comprender en profundidad la experiencia de interacción de personas adultas mayores y cuidadores con un agente virtual conversacional diseñado para brindar acompañamiento social.</strong></p>
+            <p>El objetivo no es establecer relaciones causales ni comparar condiciones experimentales, sino identificar percepciones, emociones, patrones de uso, fortalezas, limitaciones y oportunidades de mejora del sistema a partir de la experiencia directa de los participantes.</p>
 
-            <h3>1.1 Checklist de Materiales</h3>
+            <h3>1.1 Definición de Participantes</h3>
+            <p>Se realizará una muestra intencional no probabilística compuesta por dos participantes.</p>
+            
+            <h4>Criterios de Inclusión</h4>
+            <ul>
+                <li>Ser adulto mayor (60 años o más) O ser cuidador de un adulto mayor.</li>
+                <li>Comprender y comunicarse en español.</li>
+                <li>Poder mantener una conversación verbal de forma autónoma.</li>
+                <li>Aceptar participar mediante la firma del consentimiento informado.</li>
+            </ul>
+            
+            <h4>Criterios de Exclusión</h4>
+            <ul>
+                <li>Presentar dificultades severas de audición que impidan la interacción con el sistema.</li>
+                <li>Presentar condiciones cognitivas que dificulten la comprensión de las instrucciones.</li>
+                <li>No otorgar consentimiento informado.</li>
+            </ul>
+
+            <h3>1.2 Checklist de Materiales</h3>
             <ul class="checkbox-list">
                 <li>Copias impresas del Formulario de Consentimiento Informado.</li>
                 <li>Computadora de laboratorio configurada y probada con la plataforma del agente.</li>
                 <li>Audífonos con micrófono funcional y desinfectados.</li>
-                <li>Tabla de asignación aleatoria (Grupo A / Grupo B).</li>
                 <li>Enlaces pre-cargados a los cuestionarios de evaluación.</li>
                 <li>Acceso a los cuestionarios en línea: UCLA Loneliness Scale, Agent Rating Questionnaire (ARQ), User Experience Questionnaire (UEQ).</li>
                 <li>Lista de participantes y registro de asistencia.</li>
                 <li>Traer el AMPO (o archivo físico) para guardar las hojas de consentimiento informado.</li>
+                <li>Tabla de identificadores únicos de participantes (P01, P02, etc.).</li>
+                <li>Bitácora de investigación para registrar incidentes técnicos.</li>
             </ul>
 
             <h2>2. Inducción y Bienvenida</h2>
@@ -63,12 +83,16 @@
             <div class="quote">“Después de leer el consentimiento, ¿todavía desea participar del estudio?”</div>
             <p><strong>Si la respuesta es afirmativa:</strong> Solicitar el documento de identidad para verificar la mayoría de edad. Ambos firman dos copias del ejemplar. Entregue una copia al participante. Registre el ID del participante en su bitácora.</p>
 
-            <h3>2.2 Asignación al Grupo de Estudio</h3>
-            <p>De acuerdo con la tabla de asignación aleatoria, determine a qué grupo pertenece el participante y prepare silenciosamente la versión correspondiente del agente:</p>
+            <h3>2.2 Asignación de Identificador Único</h3>
+            <p>Asigne al participante un identificador único (P01, P02) que será utilizado de forma consistente en:</p>
             <ul>
-                <li><strong>Grupo A:</strong> Agente virtual con la condición experimental A: la presencia del agente visual animado</li>
-                <li><strong>Grupo B:</strong> Agente virtual con la condición experimental B: la ausencia del componente visual</li>
+                <li>Logs de conversación.</li>
+                <li>Cuestionarios.</li>
+                <li>Grabaciones.</li>
+                <li>Transcripciones.</li>
+                <li>Base de datos de análisis.</li>
             </ul>
+            <p><strong>Importante:</strong> No se almacenarán nombres en los conjuntos de datos utilizados para el análisis.</p>
 
             <h3>2.3 Cuestionarios Iniciales</h3>
             <p>Solicite al participante completar el cuestionario inicial de perfil demográfico y experiencias previas con tecnología en la computadora o tablet del laboratorio.</p>
@@ -81,39 +105,31 @@
                 <li>Experiencias previas con agentes virtuales o chatbots.</li>
             </ul>
 
-            <p>Aplique la UCLA Loneliness Scale (3 ítems o versión breve) ANTES de la interacción para medir el nivel inicial de soledad percibida del participante. Esto es crucial para comparación pre-post.</p>
+            <p>Aplique la UCLA Loneliness Scale (3 ítems o versión breve) ANTES de la interacción para medir el nivel inicial de soledad percibida del participante.</p>
             
-            <h2>3. Fase de Interacción en Laboratorio</h2>
+            <h2>3. Prueba Piloto</h2>
+            <p>Antes de la recolección formal de datos se realizará una prueba piloto con al menos una persona que no forme parte de la muestra final. La prueba piloto permitirá verificar:</p>
+            <ul>
+                <li>Funcionamiento técnico del agente.</li>
+                <li>Calidad del audio.</li>
+                <li>Registro correcto de los logs.</li>
+                <li>Comprensión de las instrucciones.</li>
+                <li>Duración estimada de la sesión.</li>
+            </ul>
+            <p><strong>Importante:</strong> Los datos obtenidos durante la prueba piloto no formarán parte del análisis final.</p>
 
-            <h3>3.1 Asignación Aleatoria y Carga de la Condición Experimental</h3>
-            <p>Use la tabla de asignación aleatoria predeterminada o un generador de números aleatorios. Asigne silenciosamente al participante a una de las dos condiciones:</p>
+            <h2>4. Configuración del Sistema</h2>
+            <p>Todos los participantes interactuarán con la misma versión del agente virtual. El sistema incluirá:</p>
+            <ul>
+                <li>Avatar visual animado.</li>
+                <li>Interacción mediante voz.</li>
+                <li>Registro automatizado de eventos y conversaciones.</li>
+            </ul>
+            <p>Debido al carácter exploratorio del estudio, no se implementarán condiciones de comparación ni asignación experimental.</p>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Condición</th>
-                        <th>Descripción Técnica</th>
-                        <th>Experiencia del Usuario</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Grupo A (Condición Experimental)</strong></td>
-                        <td>Agente virtual con avatar animado (adulto mayor, movimientos suaves, expresiones faciales)</td>
-                        <td>El usuario ve y escucha al agente en una interfaz conversacional completa</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Grupo B (Condición Control)</strong></td>
-                        <td>Interfaz conversacional por voz solamente, sin componente visual</td>
-                        <td>El usuario solo escucha respuestas de voz, sin visualización de avatar</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <p><strong>IMPORTANTE:</strong> No mencione la condición al participante. Use fraseología neutral.</p>
-            <div class="quote">"Ahora voy a cargar la plataforma del agente virtual. Esto puede tomar un momento. Mientras se carga, voy a pedirle que complete un cuestionario rápido."</div>
-
-            <p>Cargue silenciosamente la versión correspondiente según la asignación realizada. Verifique que:</p>
+            <h3>4.1 Carga de la Plataforma</h3>
+            <div class="quote">"Ahora voy a cargar la plataforma del agente virtual. Esto puede tomar un momento."</div>
+            <p>Cargue la plataforma del agente. Verifique que:</p>
             <ul>
                 <li>La plataforma está funcionando correctamente.</li>
                 <li>El micrófono captura audio limpio.</li>
@@ -121,9 +137,18 @@
                 <li>Los logs de conversación se están registrando automáticamente bajo el ID del participante.</li>
             </ul>
 
-            <h2>4. Fase de Interacción con el Agente Virtual</h2>
+            <h2>5. Familiarización con el Sistema</h2>
+            <p>Con el fin de reducir el efecto de novedad tecnológica (Novelty Effect), cada participante realizará una interacción de práctica de aproximadamente 2 a 3 minutos antes de la sesión formal. Durante esta fase podrá:</p>
+            <ul>
+                <li>Probar el micrófono.</li>
+                <li>Escuchar respuestas del agente.</li>
+                <li>Familiarizarse con la dinámica conversacional.</li>
+            </ul>
+            <p><strong>Importante:</strong> Los datos generados durante esta fase no serán considerados para el análisis del estudio.</p>
 
-            <h3>4.1 Instrucciones Neutrales y Objetivas</h3>
+            <h2>6. Fase de Interacción con el Agente Virtual</h2>
+
+            <h3>6.1 Instrucciones Neutrales y Objetivas</h3>
             <p><strong>IMPORTANTE:</strong> Use estas instrucciones exactamente. No improvise ni agregue comentarios adicionales que puedan sesgar la experiencia.</p>
 
             <div class="quote">
@@ -145,7 +170,7 @@
                 <li>No sugiera que el sistema es "inteligente", "realista" o cualquier adjetivo evaluativo.</li>
             </ul>
 
-            <h3>4.2 Prueba de Audio y Equipos</h3>
+            <h3>6.2 Prueba de Audio y Equipos</h3>
             <p>Antes de dejar solo al participante:</p>
             <ul>
                 <li>Pruebe que el micrófono capta la voz correctamente.</li>
@@ -153,7 +178,7 @@
                 <li>Confirme que el participante entiende cómo usar el micrófono y los audífonos.</li>
             </ul>
 
-            <h3>4.3 Desarrollo de la Sesión de Interacción</h3>
+            <h3>6.3 Desarrollo de la Sesión de Interacción</h3>
             <p>El investigador se retira completamente del espacio visual del participante (salir de la habitación). La sesión se desarrolla durante 10 minutos. El investigador monitorea remotamente que:</p>
             <ul>
                 <li>El sistema está funcionando sin interrupciones.</li>
@@ -161,43 +186,90 @@
                 <li>No hay problemas técnicos.</li>
             </ul>
 
-            <h2>5. Fase Post-Interacción y Recolección de Datos</h2>
+            <h2>7. Manejo Estandarizado de Fallos</h2>
+            <p>Si durante la sesión ocurre una falla técnica, el investigador seguirá el siguiente protocolo:</p>
+            <ul>
+                <li>Detener temporalmente la sesión.</li>
+                <li>Registrar el tipo de error observado.</li>
+                <li>Intentar reiniciar el sistema una única vez.</li>
+                <li>Si la falla persiste por más de cinco minutos, suspender la sesión.</li>
+                <li>Reprogramar la participación en una nueva fecha.</li>
+                <li>Toda incidencia técnica será documentada en una bitácora de investigación.</li>
+            </ul>
 
-            <h3>5.1 Transición Después de la Interacción</h3>
+            <h2>8. Fase Post-Interacción y Recolección de Datos</h2>
+
+            <h3>8.1 Transición Después de la Interacción</h3>
             <p>Una vez transcurridos los 10 minutos, el investigador regresa al espacio del participante.</p>
             <div class="quote">"¡Excelente! Ahora le voy a pedir que complete tres cuestionarios cortos sobre su experiencia. Estos cuestionarios toman aproximadamente 10 minutos en total. Responda según su percepción sincera."</div>
 
-            <h3>5.2 Cuestionarios Post-Interacción</h3>
+            <h3>8.2 Cuestionarios Post-Interacción</h3>
             <p>Administre los siguientes instrumentos validados en el orden indicado:</p>
 
-            <h4>5.2.1 UCLA Loneliness Scale (Versión Post)</h4>
+            <h4>8.2.1 UCLA Loneliness Scale (Versión Post)</h4>
             <p><strong>Tiempo:</strong> 3-4 minutos</p>
             <p><strong>Objetivo:</strong> Medir si la interacción con el agente afectó la percepción de soledad.</p>
             <p><strong>Administración:</strong> Proporcione el cuestionario en línea. Asegúrese de que todas las respuestas estén vinculadas al ID del participante, no al nombre.</p>
 
-            <h4>5.2.2 Agent Rating Questionnaire (ARQ)</h4>
+            <h4>8.2.2 Agent Rating Questionnaire (ARQ)</h4>
             <p><strong>Tiempo:</strong> 3-4 minutos</p>
             <p><strong>Objetivo:</strong> Evaluar la percepción del participante sobre las características, competencia y naturalidad del agente.</p>
             <p><strong>Administración:</strong> El ARQ mide dimensiones como animacy, likeability, perceived intelligence, y emotional contagion. Proporcione el cuestionario en línea.</p>
 
-            <h4>5.2.3 User Experience Questionnaire (UEQ)</h4>
+            <h4>8.2.3 User Experience Questionnaire (UEQ)</h4>
             <p><strong>Tiempo:</strong> 3-4 minutos</p>
             <p><strong>Objetivo:</strong> Evaluar la calidad general de la experiencia de usuario (atracción, claridad, eficiencia, dependencia, estimulación, novedad).</p>
             <p><strong>Administración:</strong> Proporcione el cuestionario en línea. Subraye que no hay respuestas correctas y que buscamos su opinión sincera.</p>
 
             <p><strong>Importante:</strong> Todos los cuestionarios deben ser completados, vinculados al ID del participante.</p>
 
-            <h3>5.3 Entrevista Cualitativa Breve</h3>
-            <p>Para profundizar en la percepción del usuario, realice una entrevista estructurada breve. Solicite permiso explícito para grabar el audio:</p>
+            <h3>8.3 Entrevista Semiestructurada en Profundidad</h3>
+            <p>Para profundizar en la percepción del usuario, realice una entrevista estructurada en profundidad. Solicite permiso explícito para grabar el audio:</p>
             <div class="quote">"Ahora voy a hacerle algunas preguntas sobre su experiencia. ¿Puedo grabar nuestro diálogo? La grabación se usará solo para transcribir sus respuestas y se almacenará de forma segura junto con los demás datos de investigación."</div>
 
-            <p><strong>Preguntas de la Entrevista (Estructura Semiestructurada):</strong></p>
+            <h4>Experiencia General</h4>
             <ul>
-                <li>"En términos generales, ¿cómo describiría su experiencia interactuando con la plataforma el día de hoy?"</li>
-                <li>"¿Hubo algún momento o característica que le haya gustado particularmente? ¿Por qué?"</li>
-                <li>"¿Hubo algo que le pareciera extraño, incómodo o frustrante? Por favor, describa."</li>
-                <li>"¿Notó algo particular en la forma en que la plataforma respondía o se comunicaba con usted?"</li>
-                <li>"¿Qué cambio o mejora le haría a este sistema?"</li>
+                <li>¿Cómo describiría su experiencia utilizando este agente virtual?</li>
+                <li>¿Qué fue lo primero que pensó cuando comenzó a interactuar con él?</li>
+                <li>¿Cómo se sintió durante la conversación?</li>
+            </ul>
+
+            <h4>Comunicación</h4>
+            <ul>
+                <li>¿Le resultó fácil conversar con el agente?</li>
+                <li>¿Hubo momentos en los que sintió que el agente comprendía lo que usted quería expresar?</li>
+                <li>¿Hubo momentos en los que sintió que no lo comprendía?</li>
+            </ul>
+
+            <h4>Componente Emocional</h4>
+            <ul>
+                <li>¿Sintió que el agente le prestaba atención?</li>
+                <li>¿En algún momento se sintió acompañado durante la conversación?</li>
+                <li>¿Hubo respuestas que le generaran alguna emoción particular?</li>
+            </ul>
+
+            <h4>Utilidad Percibida</h4>
+            <ul>
+                <li>¿En qué situaciones cree que un sistema como este podría ser útil?</li>
+                <li>¿Lo utilizaría nuevamente?</li>
+                <li>¿Con qué frecuencia cree que podría usarlo?</li>
+            </ul>
+
+            <h4>Adultos Mayores y Tecnología</h4>
+            <ul>
+                <li>¿Considera que otros adultos mayores podrían beneficiarse de una herramienta como esta?</li>
+                <li>¿Qué dificultades cree que podrían encontrar?</li>
+            </ul>
+
+            <h4>Mejoras</h4>
+            <ul>
+                <li>Si pudiera cambiar algo del sistema, ¿qué cambiaría?</li>
+                <li>¿Qué características le gustaría que tuviera en el futuro?</li>
+            </ul>
+
+            <h4>Cierre</h4>
+            <ul>
+                <li>¿Hay algo más que le gustaría comentar sobre su experiencia?</li>
             </ul>
 
             <p><strong>Notas para el investigador:</strong></p>
@@ -207,13 +279,24 @@
                 <li>Registre tanto respuestas verbales como observaciones de lenguaje corporal o emociones manifiestas.</li>
             </ul>
 
-            <h3>5.4 Despedida y Agradecimiento</h3>
+            <h3>8.4 Despedida y Agradecimiento</h3>
             <p>Detenga la grabación. Agradezca sinceramente la participación:</p>
             <div class="quote">"Muchas gracias por dedicar su tiempo a participar en este estudio. Su aporte es absolutamente valioso para nuestra investigación. La información que usted proporciona nos ayudará a entender mejor cómo las tecnologías pueden mejorar la calidad de vida de las personas. ¡Le deseo un excelente día!"</div>
 
-            <h2>6. Gestión Final de Datos y Respaldo</h2>
+            <h2>9. Gestión de Identificadores</h2>
+            <p>A cada participante se le asignará un identificador único (P01, P02) desde el inicio del estudio. Dicho identificador será utilizado de forma consistente en:</p>
+            <ul>
+                <li>Logs de conversación.</li>
+                <li>Cuestionarios.</li>
+                <li>Grabaciones.</li>
+                <li>Transcripciones.</li>
+                <li>Base de datos de análisis.</li>
+            </ul>
+            <p><strong>Importante:</strong> No se almacenarán nombres en los conjuntos de datos utilizados para el análisis.</p>
 
-            <h3>6.1 Protocolo Inmediato Post-Sesión (En los 15 minutos después de que el participante abandone)</h3>
+            <h2>10. Gestión Final de Datos y Respaldo</h2>
+
+            <h3>10.1 Protocolo Inmediato Post-Sesión (En los 15 minutos después de que el participante abandone)</h3>
             <ul>
                 <li><strong>Almacenamiento Seguro:</strong> Guarde el archivo de audio de la entrevista y verifique que los logs de conversación de la plataforma (si aplica) se hayan guardado correctamente bajo el ID del participante.</li>
                 <li><strong>Anonimización:</strong> Confirme que todos los datos y encuestas registradas estén vinculados únicamente al ID numérico y no al nombre legal del participante.</li>

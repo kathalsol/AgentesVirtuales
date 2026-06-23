@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 [System.Serializable]
 public class AzureChatRequest
@@ -15,6 +16,25 @@ public class AzureChatRequest
 
 [System.Serializable]
 public class AzureMessage
+{
+    public string role;
+    public string content;
+}
+
+[System.Serializable]
+public class AzureChatResponse
+{
+    public AzureChoice[] choices;
+}
+
+[System.Serializable]
+public class AzureChoice
+{
+    public AzureResponseMessage message;
+}
+
+[System.Serializable]
+public class AzureResponseMessage
 {
     public string role;
     public string content;
@@ -34,6 +54,9 @@ public class SpeechAgent : MonoBehaviour
 
     [Header("Azure OpenAI")]
     public string azureApiKey;
+
+    [Header("UI")]
+    public TextMeshProUGUI conversationText;
 
     [TextArea]
     public string azureEndpoint =
@@ -284,6 +307,8 @@ public class SpeechAgent : MonoBehaviour
                 content = respuesta
             });
 
+        UpdateConversationUI();
+
         while (historialConversacion.Count > 20)
         {
             historialConversacion.RemoveAt(0);
@@ -294,24 +319,22 @@ public class SpeechAgent : MonoBehaviour
 
     string ExtractAzureResponse(string json)
     {
-        const string marker = "\"content\":\"";
-
-        int start = json.IndexOf(marker);
-
-        if (start < 0)
+        try
+        {
+            AzureChatResponse response = JsonUtility.FromJson<AzureChatResponse>(json);
+            
+            if (response.choices != null && response.choices.Length > 0)
+            {
+                return response.choices[0].message.content;
+            }
+            
             return "No pude generar una respuesta.";
-
-        start += marker.Length;
-
-        int end = json.IndexOf("\"", start);
-
-        if (end < 0)
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError("Error al parsear respuesta JSON: " + ex.Message);
             return "No pude generar una respuesta.";
-
-        return json
-            .Substring(start, end - start)
-            .Replace("\\n", "\n")
-            .Replace("\\\"", "\"");
+        }
     }
 
     async Task ConversationLoop()
@@ -324,6 +347,8 @@ public class SpeechAgent : MonoBehaviour
             role = "assistant",
             content = saludoInicial
         });
+
+        UpdateConversationUI();
 
         float lastActivityTime = Time.time;
 
@@ -375,5 +400,25 @@ public class SpeechAgent : MonoBehaviour
     private void OnApplicationQuit()
     {
         isRunning = false;
+    }
+
+    private void UpdateConversationUI()
+    {
+        if (conversationText == null)
+            return;
+
+        string conversationDisplay = "";
+        
+        // Mostrar todos los mensajes si hay 2 o menos, sino mostrar solo los últimos 2
+        int startIndex = historialConversacion.Count > 2 ? historialConversacion.Count - 2 : 0;
+        
+        for (int i = startIndex; i < historialConversacion.Count; i++)
+        {
+            var message = historialConversacion[i];
+            string displayName = message.role == "user" ? "Tú" : "Juan";
+            conversationDisplay += $"<b>{displayName}:</b> {message.content}\n\n";
+        }
+
+        conversationText.text = conversationDisplay;
     }
 }
