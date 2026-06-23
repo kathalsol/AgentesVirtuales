@@ -13,9 +13,15 @@ Este proyecto propone el diseño de un **agente virtual de compañía con avatar
 - `docs/`: carpeta para los documentos del proyecto, donde se subirán todos los entregables.
 - `src/`: carpeta donde eventualmente estará el código necesario para la creación del agente virtual y los archivos de unity.
 
-## Video de demostración
+## Video de demostración Entregable 2
 
 https://youtu.be/4BFylup-Vu8 
+
+## Video de demostración Entregable 3
+
+Video del escenario 1: https://youtu.be/cm4ADQCP50k
+
+Video del escenario 2: https://youtu.be/lAB_iOGvM8M
 
 ## Instrucciones de Ejecución del PoC
 
